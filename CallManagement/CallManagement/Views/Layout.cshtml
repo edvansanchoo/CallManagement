@@ -1,17 +1,202 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+
 }
 
-<!DOCTYPE html>
 
-<html>
+<!DOCTYPE html>
+<html class="no-focus" lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Layout</title>
+    <meta charset="utf-8">
+    <title>@Session["AppName"]</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="~/assets/img/favicons/favicon.png">
+    <link rel="icon" type="image/png" href="~/assets/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="~/assets/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="~/assets/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="~/assets/img/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="~/assets/img/favicons/favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="57x57" href="~/assets/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/assets/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/assets/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/assets/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/assets/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/assets/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/assets/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/assets/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/assets/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+    @*<link rel="stylesheet" href="~/assets/js/plugins/select2/select2.css">
+        <link rel="stylesheet" href="~/assets/js/plugins/select2/select2-bootstrap.min.css">*@
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" id="css-main" href="~/assets/css/jabilbootstrap.css">
+    @*<link rel="stylesheet" href="~/assets/js/plugins/datatables/jquery.dataTables.min.css">*@
+    <link rel="stylesheet" href="~/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.skinHTML5.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/dropzonejs/dropzone.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/sweetalert/sweetalert.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="~/assets/js/plugins/select2/select2-bootstrap.min.css">
+
+    <script src="~/assets/js/core/jquery.min.js"></script>
+    <script src="~/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/assets/js/core/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/core/jquery.scrollLock.min.js"></script>
+    <script src="~/assets/js/core/jquery.appear.min.js"></script>
+    <script src="~/assets/js/core/jquery.countTo.min.js"></script>
+    <script src="~/assets/js/core/jquery.placeholder.min.js"></script>
+    <script src="~/assets/js/core/js.cookie.min.js"></script>
+    <script src="~/assets/js/app.js"></script>
+    <script src="~/assets/js/plugins/jquery-ui/jquery-ui.js"></script>
+
+    <!-- Page JS Plugins -->
+    <script src="~/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-datetimepicker/moment.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="~/assets/js/plugins/masked-inputs/jquery.maskedinput.min.js"></script>
+    <script src="~/assets/js/plugins/jquery-auto-complete/jquery.auto-complete.js"></script>
+    <script src="~/assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+    <script src="~/assets/js/plugins/dropzonejs/dropzone.min.js"></script>
+    <script src="~/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
+    <!-- Page JS Code -->
+    <script src="~/assets/js/pages/base_forms_pickers_more.js"></script>
+    <script src="~/assets/js/pages/base_ui_activity.js"></script>
+
+    <script src="~/Scripts/Constants.js"></script>
+
+
+
+    <!-- Page JS Code -->
+    <script>
+            jQuery(function () {
+                // Init page helpers (BS Datepicker + BS Datetimepicker + BS Colorpicker + BS Maxlength + Select2 + Masked Input + Range Sliders + Tags Inputs plugins)
+                App.initHelpers(['datepicker', 'datetimepicker', 'colorpicker', 'maxlength', 'masked-inputs', 'rangeslider', 'tags-inputs']);
+
+            });
+
+            jQuery(function () {
+                App.initHelpers('notify');
+            });
+    </script>
 </head>
 <body>
-    <div> 
+    <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+        <nav id="sidebar">
+            <div></div>
+            <div id="sidebar-scroll">
+                <div class="sidebar-content">
+                    <!-- Side Header -->
+                    <div class="side-header side-content bg-white-op">
+                        <a class="h5 text-white" href="@Url.Action("Index","Home")">
+                            <i class="si si-home text-success"></i> <span class="h4 font-w600 sidebar-mini-hide text-white"></span>
+                        </a>
+                    </div>
+                    <!-- END Side Header -->
+                    <!-- Side Content -->
+                    <div class="side-content">
+                        <ul class="nav-main">
+                            <li class="nav-main-heading"><span class="sidebar-mini-hide text-white">Menu</span></li>
+                            <li>
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-note text-white-op"></i><span class="sidebar-mini-hide text-white-op">Chamados</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Action("IndexAll","Label")">Criar Chamado</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Action("IndexNew","Label")">Pesquisar Chamado</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END Side Content -->
+                </div>
+                <!-- Sidebar Content -->
+            </div>
+            <!-- END Sidebar Scroll Container -->
+        </nav>
+        <!-- END Sidebar -->
+        <!-- Header -->
+        <header id="header-navbar" class="content-mini content-mini-full">
+            <!-- Header Navigation Right -->
+            <ul class="nav-header pull-left">
+                <li class="hidden-xs hidden-sm">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav-header pull-right">
+                <li>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                            <img src="~/assets/img/avatars/avatar10.jpg" alt="Avatar">
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a tabindex="-1" href="">
+                                    <i class="si si-logout pull-right"></i>Log out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav-header pull-left" hidden>
+                <li class="hidden-xs hidden-sm">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button" id="btnEsconder">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                </li>
+            </ul>
+            <!-- END Header Navigation Right -->
+            <!-- Header Navigation Left -->
+            <!-- END Header Navigation Left -->
+        </header>
+        <!-- END Header -->
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Page Content -->
+            <div class="content">
+                <div class="block">
+                    <div class="block-content block-content-full">
+                        @RenderBody()
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <!-- END Page Content -->
+        </main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix navbar navbar-fixed-bottom">
+
+            <div class="pull-right">
+                <a class="font-w600" href="/index.html" target="_blank">Gerenciador</a> &copy; <span class="js-year-copy"></span>
+            </div>
+            <div class="pull-right">
+
+            </div>
+        </footer>
+        <!-- END Footer -->
     </div>
 </body>
 </html>
