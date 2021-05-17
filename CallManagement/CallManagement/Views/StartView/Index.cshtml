@@ -1,21 +1,42 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout.cshtml";
 
 
 }
 
-<!DOCTYPE html>
+<h2 class="text-center">Bem - Vindo ao Gerenciador de Chamados</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <h1>Hello, dude</h1>
+
+<br />
+
+<div class="row">
+
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="block">
+            <div style="height:165px;" class="block-content block-content-full ribbon ribbon-modern ribbon-primary border-black-op bg-default">
+                <a href="@Url.Action("Cadastro","Paginas")">
+                    <div class="text-center push-20-t push">
+                        <i class="fa fa-plus fa-3x text-white push"></i>
+                        <h3 class="h5" style="color:white;">Criar Chamado</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="block">
+            <div style="height:165px;" class="block-content block-content-full ribbon ribbon-modern ribbon-primary border-black-op bg-flat">
+                <a href="@Url.Action("IndexReport","Label")">
+                    <div class="text-center push-20-t push">
+                        <i class="fa fa-search fa-3x text-white push"></i>
+                        <h3 class="h5" style="color:white;">Pesquisa Chamado</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
