@@ -1,18 +1,65 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "IndexNew";
+    Layout = "~/Views/Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<style>
+    th {
+        color: white;
+        text-align: center;
+    }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CreateIncident</title>
-</head>
-<body>
-    <div> 
-        <h1>Create Incident</h1>
+    td {
+        text-align: center;
+    }
+</style>
+
+<h2>Create New Incident</h2>
+<hr />
+<div class="row">
+    <div class="col-xs-4">
+        <h4>Incident Informations</h4>
     </div>
-</body>
-</html>
+</div>
+<br />
+<form action="@Url.Action("SaveLabel","Label")" method="post" id="formLabel" enctype="multipart/form-data">
+    <input id="dataProperties" name="DataProperties" hidden />
+    <div class="row">
+        <div class="col-xs-4">
+            <label>Requested By</label>
+            <input type="text" class="form-control" name="LoftwarePath" id="txtLoftwarePath" required autocomplete="off" />
+        </div>
+
+        <div class="col-xs-2">
+            <label>Still getting to work? </label>
+            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+                <option value="0" disabled="" selected=""></option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+            </select>
+        </div>
+    </div>
+    <br />
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-3">
+            <label>Type</label>
+            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+                <option value="0" disabled="" selected=""></option>
+                <option value="1">Hardware Computer</option>
+                <option value="2">Software Computer</option>
+            </select>
+        </div>
+        <div class="col-xs-6">
+            <label>Short Description</label>
+            <input type="text" class="form-control" id="txtPropertyValue" autocomplete="off" />
+        </div>
+        <div class="col-xs-2">
+            <button type="button" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Add <i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+</form>
+<br />

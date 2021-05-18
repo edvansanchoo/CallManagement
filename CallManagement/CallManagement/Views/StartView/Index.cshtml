@@ -5,10 +5,10 @@
 
 }
 
-<h2 class="text-center">Bem - Vindo ao Gerenciador de Chamados</h2>
+<h2 class="text-center">Welcome To Call Management</h2>
 
+<h2 class="content-heading text-black">Incident <small style="color:black;">(Access here to create or search your incident)</small></h2>
 
-<br />
 
 <div class="row">
 
@@ -19,7 +19,7 @@
                 <a href="@Url.Action("CreateIncident","Incident")">
                     <div class="text-center push-20-t push">
                         <i class="fa fa-plus fa-3x text-white push"></i>
-                        <h3 class="h5" style="color:white;">Criar Chamado</h3>
+                        <h3 class="h5" style="color:white;">Create Incident</h3>
                     </div>
                 </a>
             </div>
@@ -29,14 +29,47 @@
     <div class="col-sm-6 col-lg-3">
         <div class="block">
             <div style="height:165px;" class="block-content block-content-full ribbon ribbon-modern ribbon-primary border-black-op bg-flat">
-                <a href="@Url.Action("IndexReport","Label")">
+                <a href="@Url.Action("SearchIncident","Incident")">
                     <div class="text-center push-20-t push">
                         <i class="fa fa-search fa-3x text-white push"></i>
-                        <h3 class="h5" style="color:white;">Pesquisa Chamado</h3>
+                        <h3 class="h5" style="color:white;">Search Incident</h3>
                     </div>
                 </a>
             </div>
         </div>
     </div>
+
+</div>
+
+<h2 class="content-heading text-black">Request <small style="color:black;">(Access here to create or search your resquest)</small></h2>
+
+<div class="row">
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="block">
+            <div style="height:165px;" class="block-content block-content-full ribbon ribbon-modern ribbon-primary border-black-op bg-primary">
+                <a href="@Url.Action("CreateRequest","Request")">
+                    <div class="text-center push-20-t push">
+                        <i class="fa fa-plus fa-3x text-white push"></i>
+                        <h3 class="h5" style="color:white;">Create Request</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="block">
+            <div style="height:165px;" class="block-content block-content-full ribbon ribbon-modern ribbon-primary border-black-op bg-flat">
+                <a href="@Url.Action("CreateRequest","Request")">
+                    <div class="text-center push-20-t push">
+                        <i class="fa fa-search fa-3x text-white push"></i>
+                        <h3 class="h5" style="color:white;">Search Request</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 
 </div>
