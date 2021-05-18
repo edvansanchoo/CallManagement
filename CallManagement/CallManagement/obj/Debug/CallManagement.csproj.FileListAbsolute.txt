@@ -154,3 +154,9 @@ D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManage
 D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\obj\Debug\CallManagement.csproj.CopyComplete
 D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\obj\Debug\CallManagement.dll
 D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\obj\Debug\CallManagement.pdb
+D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\EntityFramework.dll
+D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\EntityFramework.SqlServer.dll
+D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\nunit.framework.dll
+D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\EntityFramework.xml
+D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\EntityFramework.SqlServer.xml
+D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\nunit.framework.xml
