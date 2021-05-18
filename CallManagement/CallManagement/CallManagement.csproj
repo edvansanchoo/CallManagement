@@ -1119,6 +1119,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\IncidentController.cs" />
+    <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\StartViewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1222,6 +1223,7 @@
     <Content Include="Views\StartView\Index.cshtml" />
     <Content Include="Views\Incident\CreateIncident.cshtml" />
     <Content Include="Views\Layout.cshtml" />
+    <Content Include="Views\Request\CreateRequest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
