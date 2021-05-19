@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "AllRequest";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/assets/js/plugins/datatables/jquery.dataTables.css">
+<link href="~/assets/js/plugins/datatables/buttons.dataTables.min.css" rel="stylesheet" />
+<link href="~/assets/js/plugins/datatables/buttons.jqueryui.css" rel="stylesheet" />
+<link href="~/assets/js/plugins/datatables/buttons.foundation.css" rel="stylesheet" />
+<script src="~/assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/assets/js/plugins/datatables/dataTables.buttons.js"></script>
+<script src="~/assets/js/plugins/datatables/buttons.jqueryui.js"></script>
+<script src="~/assets/js/plugins/datatables/buttons.flash.js"></script>
+<script src="~/assets/js/plugins/datatables/buttons.print.js"></script>
+<script src="~/assets/js/plugins/datatables/buttons.semanticui.js"></script>
+<script src="~/assets/js/plugins/datatables/jszip.min.js"></script>
+<script src="~/assets/js/plugins/datatables/buttons.html5.js"></script>
+<script src="~/assets/js/plugins/datatables/buttons.semanticui.js"></script>
+<script src="~/assets/js/plugins/datatables/pdfmake.js"></script>
+<script src="~/assets/js/plugins/datatables/vfs_fonts.js"></script>
+
+<style>
+    th {
+        color: white;
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
+</style>
+
+
+
+<h2>All Request's</h2>
+<hr />
+<div class="row">
+    <div class="col-xs-4" style="margin-left:10px;">
+        <a href="@Url.Action("CreateRequest","Request")" class="btn btn-default">Create New <i class="fa fa-plus"></i></a>
+    </div>
+    <div class="col-xs-3" style="margin-left:430px;margin-top:-8px;">
+        <form action="frontend_search.html" method="post">
+            <div class="input-group input-group-lg">
+                <input class="form-control" type="number" placeholder="Search">
+                <div class="input-group-btn">
+                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-bordered">
+            <thead class="bg-default">
+                <tr>
+                    <th>Request Number</th>
+                    <th>Created By</th>
+                    <th>Status</th>
+                    <th>Work Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/Scripts/Label/IndexAll.js"></script>
+<script src="~/assets/js/pages/base_tables_datatables.js"></script>

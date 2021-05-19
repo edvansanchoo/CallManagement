@@ -1239,6 +1239,7 @@
     <Content Include="Views\Request\CreateRequest.cshtml" />
     <Content Include="Views\Incident\CreateIncident.cshtml" />
     <Content Include="Views\Incident\AllIncident.cshtml" />
+    <Content Include="Views\Request\AllRequest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

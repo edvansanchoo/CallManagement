@@ -9,7 +9,12 @@ namespace CallManagement.Controllers
     public class RequestController : Controller
     {
         // GET: Request
-        public ActionResult Index()
+        public ActionResult CreateRequest()
+        {
+            return View();
+        }
+
+        public ActionResult AllRequest()
         {
             return View();
         }
