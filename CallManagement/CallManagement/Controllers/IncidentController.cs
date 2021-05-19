@@ -11,31 +11,30 @@ namespace CallManagement.Controllers
 {
     public class IncidentController : Controller
     {
-        private object incidents;
+       
 
         // GET: CreateIncident
         public ActionResult CreateIncident()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Save()
+        {
             ModelIncidents incidents = new ModelIncidents();
             DaoIncidents daoIncidents = new DaoIncidents();
 
-            /*
-            incidents.NumberIncident = daoIncidents.generationNumberIncident(); 
-            incidents.Caller = Request["Caller"];
-            incidents.Status = Request["Status"];
-            incidents.WorkNotes = Request["WorkNotes"];
-            incidents.ResolutionInformation = Request["ResolutionInformation"];
-            */
 
-            incidents.NumberIncident = daoIncidents.generationNumberIncident(); ;
-            incidents.Caller = "João Marcos";
-            incidents.Status = "Open";
-            incidents.WorkNotes = "The print with low ink";
-            incidents.ResolutionInformation = "In proguess";
+            incidents.NumberIncident = daoIncidents.generationNumberIncident();
+            incidents.Caller = Request["Caller"];
+            incidents.Status = "";
+            incidents.WorkNotes = Request["WorkNotes"];
+            incidents.ResolutionInformation = "";
 
             daoIncidents.Save(incidents);
-
-            return RedirectToAction("./StartView");
+            
+            return RedirectToAction("CreateIncident");
         }
 
         public void AlterIncident(String numberIncident)

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "IndexNew";
+    ViewBag.Title = "IncidentNew";
     Layout = "~/Views/Layout.cshtml";
 }
 
@@ -23,12 +23,12 @@
     </div>
 </div>
 <br />
-<form action="@Url.Action("SaveLabel","Label")" method="post" id="formLabel" enctype="multipart/form-data">
+<form action="@Url.Action("Save","Incident")" method="post" id="formLabel" enctype="multipart/form-data">
     <input id="dataProperties" name="DataProperties" hidden />
     <div class="row">
         <div class="col-xs-4">
             <label>Requested By</label>
-            <input type="text" class="form-control" name="LoftwarePath" id="txtLoftwarePath" required autocomplete="off" />
+            <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" />
         </div>
 
         <div class="col-xs-2">
@@ -55,10 +55,10 @@
         </div>
         <div class="col-xs-6">
             <label>Short Description</label>
-            <input type="text" class="form-control" id="txtPropertyValue" autocomplete="off" />
+            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" autocomplete="off" />
         </div>
         <div class="col-xs-2">
-            <button type="button" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Add <i class="fa fa-plus"></i></button>
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Save <i class="fa fa-plus"></i></button>
         </div>
     </div>
 </form>
