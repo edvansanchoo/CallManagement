@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "IndexNew";
+    ViewBag.Title = "IncidentNew";
     Layout = "~/Views/Layout.cshtml";
 }
 
@@ -15,83 +15,53 @@
     }
 </style>
 
-<h2>Create New Label</h2>
+<h2>Create New Request</h2>
 <hr />
 <div class="row">
     <div class="col-xs-4">
-        <h4>Label Properties</h4>
+        <h4>Request Informations</h4>
     </div>
 </div>
 <br />
-<form action="@Url.Action("SaveLabel","Label")" method="post" id="formLabel" enctype="multipart/form-data">
+<form action="@Url.Action("Save","Incident")" method="post" id="formLabel" enctype="multipart/form-data">
     <input id="dataProperties" name="DataProperties" hidden />
     <div class="row">
-        <div class="col-xs-2">
-            <label>Label Name</label>
-            <input type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off" />
+        <div class="col-xs-4">
+            <label>Requested By</label>
+            <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" />
         </div>
-        <div class="col-xs-6">
-            <label>Loftware Path</label>
-            <input type="text" class="form-control" name="LoftwarePath" id="txtLoftwarePath" required autocomplete="off" />
-        </div>
-    </div>
-    <br />
-    <div class="row">
 
-        <div class="col-xs-6">
-            <label>Image Path</label>
-            <input type="file" class="form-control" name="Img" accept="image/*" />
-        </div>
         <div class="col-xs-2">
-            <p></p>
-            <label class="css-input switch switch-warning">
-                <input type="checkbox" name="enabledOrder" /><span></span> To Order
-            </label>
-        </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col-xs-4">
-            <h4>Fields Properties</h4>
+            <label>Still getting to work? </label>
+            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+                <option value="0" disabled="" selected=""></option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+            </select>
         </div>
     </div>
     <br />
+
+    <br />
+
     <div class="row">
-        <div class="col-xs-4">
-            <label>Property Name</label>
-            <input type="text" class="form-control" id="txtPropertyName" autocomplete="off" />
+        <div class="col-xs-3">
+            <label>Type</label>
+            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+                <option value="0" disabled="" selected=""></option>
+                <option value="1">Hardware Computer</option>
+                <option value="2">Software Computer</option>
+            </select>
         </div>
-        <div class="col-xs-4">
-            <label>Property Value</label>
-            <input type="text" class="form-control" id="txtPropertyValue" autocomplete="off" />
+        <div class="col-xs-6">
+            <label>Short Description</label>
+            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" autocomplete="off" />
         </div>
         <div class="col-xs-2">
-            <button type="button" style="margin-left:-30px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Add <i class="fa fa-plus"></i></button>
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Save <i class="fa fa-plus"></i></button>
         </div>
     </div>
 </form>
 <br />
-<div class="row">
-    <div class="col-xs-6">
-        <table class="table table-bordered">
-            <thead class="bg-primary">
-                <tr>
-                    <th>Property Name</th>
-                    <th>Property Value</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-            </tbody>
-        </table>
-    </div>
-</div>
-<br />
-<div class="row">
-    <div class="col-xs-4">
-        <button id="btnSave" class="btn btn-success">Save <i class="fa fa-save"></i></button>
-        <a class="btn btn-info" href="@Url.Action("IndexAll","Label")">Back <i class="fa fa-undo"></i></a>
-    </div>
-</div>
 
-<script src="~/Scripts/Label/IndexNew.js"></script>
+

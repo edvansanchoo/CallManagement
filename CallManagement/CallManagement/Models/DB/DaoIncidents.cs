@@ -19,7 +19,7 @@ namespace CallManagement.Models.DB
         {
             using (SqlConnection connection = new SqlConnection(sqlConnection()))
             {
-                string queryString = "SELCT * FROM INCIDENTS";
+                string queryString = "SELECT * FROM INCIDENT";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
@@ -28,6 +28,7 @@ namespace CallManagement.Models.DB
 
                 DataTable table = new DataTable();
                 adapter.Fill(table);
+
                 return table;
             }
         }
@@ -85,20 +86,6 @@ namespace CallManagement.Models.DB
             {
 
             }
-        }
-
-        public String generationNumberIncident()
-        {
-            String numberIncident = "INC";
-            Random random = new Random();
-
-            for (int i = 0; i < 4; i++)
-            {
-                numberIncident += random.Next(0, 9);
-            }
-
-            return numberIncident;
-
         }
     }
 }

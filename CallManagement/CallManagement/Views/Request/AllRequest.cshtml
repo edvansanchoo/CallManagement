@@ -1,8 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "AllIncident";
+    ViewBag.Title = "AllRequest";
     Layout = "~/Views/Layout.cshtml";
-    List<CallManagement.Models.ViewModel.ModelIncidents> incident = ViewBag.ModelIncidents;
 }
 
 <link rel="stylesheet" href="~/assets/js/plugins/datatables/jquery.dataTables.css">
@@ -34,11 +33,11 @@
 
 
 
-<h2>All Incident's</h2>
+<h2>All Request's</h2>
 <hr />
 <div class="row">
     <div class="col-xs-4" style="margin-left:10px;">
-        <a href="@Url.Action("CreateIncident","Incident")" class="btn btn-default">Create New <i class="fa fa-plus"></i></a>
+        <a href="@Url.Action("CreateRequest","Request")" class="btn btn-default">Create New <i class="fa fa-plus"></i></a>
     </div>
     <div class="col-xs-3" style="margin-left:430px;margin-top:-8px;">
         <form action="frontend_search.html" method="post">
@@ -57,24 +56,11 @@
         <table class="table table-bordered">
             <thead class="bg-default">
                 <tr>
-                    <th>Incident Number</th>
+                    <th>Request Number</th>
                     <th>Created By</th>
                     <th>Status</th>
                     <th>Work Notes</th>
-                    <th>Edit</th>
-                    <th>Close</th>
                 </tr>
-                @foreach (var p in incident)
-                {
-                    <tr class="table-conteudo">
-                        <td>@p.NumberIncident</td>
-                        <td>@p.Caller</td>
-                        <td>@p.Status</td>
-                        <td>@p.WorkNotes</td>
-                        
-                    </tr>
-
-                }
             </thead>
             <tbody>
             </tbody>

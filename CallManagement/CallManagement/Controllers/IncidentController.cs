@@ -23,16 +23,15 @@ namespace CallManagement.Controllers
         public ActionResult Save()
         {
             ModelIncidents incidents = new ModelIncidents();
-            DaoIncidents daoIncidents = new DaoIncidents();
 
 
-            incidents.NumberIncident = daoIncidents.generationNumberIncident();
+            incidents.NumberIncident = incidents.generationNumberIncident();
             incidents.Caller = Request["Caller"];
             incidents.Status = "";
             incidents.WorkNotes = Request["WorkNotes"];
             incidents.ResolutionInformation = "";
 
-            daoIncidents.Save(incidents);
+            incidents.Save();
             
             return RedirectToAction("CreateIncident");
 
@@ -66,8 +65,8 @@ namespace CallManagement.Controllers
         }
         public ActionResult AllIncident()
         {
+            ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
             return View();
         }
-
     }
 }
