@@ -1235,9 +1235,10 @@
     <Content Include="assets\less\variables.less" />
     <None Include="packages.config" />
     <Content Include="Views\StartView\Index.cshtml" />
-    <Content Include="Views\Incident\CreateIncident.cshtml" />
     <Content Include="Views\Layout.cshtml" />
     <Content Include="Views\Request\CreateRequest.cshtml" />
+    <Content Include="Views\Incident\CreateIncident.cshtml" />
+    <Content Include="Views\Incident\AllIncident.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

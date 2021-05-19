@@ -160,3 +160,9 @@ D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManage
 D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\EntityFramework.xml
 D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\EntityFramework.SqlServer.xml
 D:\Windows\Faculdade\5 periodo\Tecnologia Web\Trabalho\CallManagement\CallManagement\CallManagement\bin\nunit.framework.xml
+C:\Users\kevin\Documents\Project C#\CallManagement\CallManagement\CallManagement\bin\EntityFramework.dll
+C:\Users\kevin\Documents\Project C#\CallManagement\CallManagement\CallManagement\bin\EntityFramework.SqlServer.dll
+C:\Users\kevin\Documents\Project C#\CallManagement\CallManagement\CallManagement\bin\nunit.framework.dll
+C:\Users\kevin\Documents\Project C#\CallManagement\CallManagement\CallManagement\bin\EntityFramework.xml
+C:\Users\kevin\Documents\Project C#\CallManagement\CallManagement\CallManagement\bin\EntityFramework.SqlServer.xml
+C:\Users\kevin\Documents\Project C#\CallManagement\CallManagement\CallManagement\bin\nunit.framework.xml

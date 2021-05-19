@@ -1,17 +1,97 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "IndexNew";
+    Layout = "~/Views/Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<style>
+    th {
+        color: white;
+        text-align: center;
+    }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
+    td {
+        text-align: center;
+    }
+</style>
+
+<h2>Create New Label</h2>
+<hr />
+<div class="row">
+    <div class="col-xs-4">
+        <h4>Label Properties</h4>
     </div>
-</body>
-</html>
+</div>
+<br />
+<form action="@Url.Action("SaveLabel","Label")" method="post" id="formLabel" enctype="multipart/form-data">
+    <input id="dataProperties" name="DataProperties" hidden />
+    <div class="row">
+        <div class="col-xs-2">
+            <label>Label Name</label>
+            <input type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off" />
+        </div>
+        <div class="col-xs-6">
+            <label>Loftware Path</label>
+            <input type="text" class="form-control" name="LoftwarePath" id="txtLoftwarePath" required autocomplete="off" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+
+        <div class="col-xs-6">
+            <label>Image Path</label>
+            <input type="file" class="form-control" name="Img" accept="image/*" />
+        </div>
+        <div class="col-xs-2">
+            <p></p>
+            <label class="css-input switch switch-warning">
+                <input type="checkbox" name="enabledOrder" /><span></span> To Order
+            </label>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-4">
+            <h4>Fields Properties</h4>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-4">
+            <label>Property Name</label>
+            <input type="text" class="form-control" id="txtPropertyName" autocomplete="off" />
+        </div>
+        <div class="col-xs-4">
+            <label>Property Value</label>
+            <input type="text" class="form-control" id="txtPropertyValue" autocomplete="off" />
+        </div>
+        <div class="col-xs-2">
+            <button type="button" style="margin-left:-30px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Add <i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+</form>
+<br />
+<div class="row">
+    <div class="col-xs-6">
+        <table class="table table-bordered">
+            <thead class="bg-primary">
+                <tr>
+                    <th>Property Name</th>
+                    <th>Property Value</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-xs-4">
+        <button id="btnSave" class="btn btn-success">Save <i class="fa fa-save"></i></button>
+        <a class="btn btn-info" href="@Url.Action("IndexAll","Label")">Back <i class="fa fa-undo"></i></a>
+    </div>
+</div>
+
+<script src="~/Scripts/Label/IndexNew.js"></script>

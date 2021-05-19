@@ -35,7 +35,7 @@ namespace CallManagement.Controllers
 
             daoIncidents.Save(incidents);
 
-            return RedirectToAction("./StartView");
+            return View();
         }
 
         public void AlterIncident(String numberIncident)
@@ -63,8 +63,11 @@ namespace CallManagement.Controllers
                 daoIncidents.AlterIncident(incidents);
             
             }
-
-
         }
+        public ActionResult AllIncident()
+        {
+            return View();
+        }
+
     }
 }
