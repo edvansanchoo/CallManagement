@@ -27,7 +27,7 @@ namespace CallManagement.Controllers
 
             incidents.NumberIncident = incidents.generationNumberIncident();
             incidents.Caller = Request["Caller"];
-            incidents.Status = "";
+            incidents.Status = "Open";
             incidents.WorkNotes = Request["WorkNotes"];
             incidents.ResolutionInformation = "";
 
