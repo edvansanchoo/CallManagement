@@ -1125,6 +1125,10 @@
     <Content Include="assets\js\plugins\sweetalert\sweetalert.min.js" />
     <Content Include="assets\loading.gif" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Incident\AllIncident.js" />
+    <Content Include="Scripts\Incident\CreateIncident.js" />
+    <Content Include="Scripts\Request\AllRequest.js" />
+    <Content Include="Scripts\Request\CreateRequest.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
