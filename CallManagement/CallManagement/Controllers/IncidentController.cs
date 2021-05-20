@@ -46,11 +46,11 @@ namespace CallManagement.Controllers
 
             if(NumberIncident != null && NumberIncident != "")
             {
-                ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
+                //ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
             }
             else
             {
-                ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
+                //ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
             }
             return View();
         }
@@ -79,6 +79,30 @@ namespace CallManagement.Controllers
 
             return RedirectToAction("AllIncident");
 
+        }
+
+        public ActionResult ClosingIncident()
+        {
+            var incidents = new ModelIncidents();
+
+            incidents.NumberIncident = Request["NumberIncident"];
+            incidents.Caller = Request["Caller"];
+            incidents.Status = "Closed";
+            incidents.WorkNotes = Request["WorkNotes"];
+            incidents.ResolutionInformation = Request["ResolutionInformation"];
+            incidents.Description = Request["Description"];
+
+            incidents.AlterIncidentByNumber(incidents);
+
+            return RedirectToAction("AllIncident");
+
+        }
+
+        public ActionResult CloseIncident(String NumberIncident)
+        {
+            ViewBag.ModelIncidents = new ModelIncidents().SearchIncidentByNumber(NumberIncident);
+
+            return View();
 
         }
     }

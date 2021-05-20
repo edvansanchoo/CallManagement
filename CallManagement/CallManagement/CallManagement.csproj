@@ -1133,7 +1133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CloseController.cs" />
     <Compile Include="Controllers\IncidentController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\StartViewController.cs" />
@@ -1141,6 +1140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\DaoIncidents.cs" />
+    <Compile Include="Models\DB\DaoRequests.cs" />
     <Compile Include="Models\ViewModel\ModelIncidents.cs" />
     <Compile Include="Models\ViewModel\ModelRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1245,8 +1245,10 @@
     <Content Include="Views\Incident\CreateIncident.cshtml" />
     <Content Include="Views\Incident\AllIncident.cshtml" />
     <Content Include="Views\Request\AllRequest.cshtml" />
-    <Content Include="Views\Close\Close.cshtml" />
     <Content Include="Views\Incident\EditIncident.cshtml" />
+    <Content Include="Views\Incident\CloseIncident.cshtml" />
+    <Content Include="Views\Request\EditRequest.cshtml" />
+    <Content Include="Views\Request\CloseRequest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
