@@ -79,5 +79,10 @@ namespace CallManagement.Controllers
             }
             return View();
         }
+
+        public ActionResult EditIncident()
+        {
+            return View();
+        }
     }
 }
