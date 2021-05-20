@@ -26,6 +26,10 @@
 <form action="@Url.Action("Save","Incident")" method="post" id="formLabel" enctype="multipart/form-data">
     <input id="dataProperties" name="DataProperties" hidden />
     <div class="row">
+        <div class="col-xs-2">
+            <label>Incident Number</label>
+            <input type="text" class="form-control" name="Caller" id="Caller" disabled required autocomplete="off" />
+        </div>
         <div class="col-xs-4">
             <label>Requested By</label>
             <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" />
@@ -55,7 +59,7 @@
         </div>
         <div class="col-xs-6">
             <label>Short Description</label>
-            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" />
+            <input type="text" class="form-control" id="Description" name="Description" required autocomplete="off" />
         </div>
     </div>
     <br />
@@ -65,7 +69,7 @@
     <div class="row">
         <div class="col-xs-8">
             <label>Work Notes</label>
-            <input type="text" class="form-control" id="Description" name="Description" required autocomplete="off" />
+            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" />
         </div>
         <div class="col-xs-2">
             <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Update <i class="fa fa-plus"></i></button>

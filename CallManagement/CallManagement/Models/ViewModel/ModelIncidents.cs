@@ -14,6 +14,7 @@ namespace CallManagement.Models.ViewModel
         public String Status { get; set; }
         public String WorkNotes { get; set; }
         public String ResolutionInformation { get; set; }
+        public String Description { get; set; }
 
 
 
@@ -30,6 +31,7 @@ namespace CallManagement.Models.ViewModel
                 incidents.Status = Convert.ToString(row["Status"]);
                 incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
+                incidents.Description = Convert.ToString(row["Description"]);
 
                 lista.Add(incidents);
             }
@@ -67,6 +69,7 @@ namespace CallManagement.Models.ViewModel
                 incidents.Status = Convert.ToString(row["Status"]);
                 incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
+                incidents.Description = Convert.ToString(row["Description"]);
 
                 lista.Add(incidents);
             }

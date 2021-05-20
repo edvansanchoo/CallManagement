@@ -28,8 +28,9 @@ namespace CallManagement.Controllers
             incidents.NumberIncident = incidents.generationNumberIncident();
             incidents.Caller = Request["Caller"];
             incidents.Status = "Open";
-            incidents.WorkNotes = Request["WorkNotes"];
+            incidents.WorkNotes = Request[""];
             incidents.ResolutionInformation = "";
+            incidents.Description = Request["Description"];
 
             incidents.Save();
             
@@ -49,15 +50,18 @@ namespace CallManagement.Controllers
                 incidents.Status = Convert.ToString(row["Status"]);
                 incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
+                incidents.Description = Convert.ToString(row["Description"]);
             }
 
-            if(incidents != null)
+
+            if (incidents != null)
             {
-                
+                incidents.NumberIncident = Request["NumberIncident"];
                 incidents.Caller = Request["Caller"];
                 incidents.Status = Request["Status"];
                 incidents.WorkNotes = Request["WorkNotes"];
                 incidents.ResolutionInformation = Request["ResolutionInformation"];
+                incidents.Description = Request["Description"];
 
                 daoIncidents.AlterIncident(incidents);
             
@@ -77,6 +81,11 @@ namespace CallManagement.Controllers
             {
                 ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
             }
+            return View();
+        }
+
+        public ActionResult EditIncident()
+        {
             return View();
         }
     }
