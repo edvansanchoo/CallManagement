@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "IncidentNew";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<style>
+    th {
+        color: white;
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
+</style>
+
+<h2>Edit Request</h2>
+<hr />
+<div class="row">
+    <div class="col-xs-4">
+        <h4>Request Informations</h4>
+    </div>
+</div>
+<br />
+<form action="@Url.Action("Save","Incident")" method="post" id="formLabel" enctype="multipart/form-data">
+    <input id="dataProperties" name="DataProperties" hidden />
+    <div class="row">
+        <div class="col-xs-2">
+            <label>Request Number</label>
+            <input type="text" class="form-control" name="CallerRequest" id="CallerRequest" disabled required autocomplete="off" />
+        </div>
+        <div class="col-xs-4">
+            <label>Requested By</label>
+            <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" />
+        </div>
+
+        <div class="col-xs-2">
+            <label>Sector</label>
+            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+                <option value="0" disabled="" selected=""></option>
+                <option value="1">HR</option>
+                <option value="2">Finance</option>
+                <option value="3">Security</option>
+                <option value="4">Maintenence</option>
+                <option value="5">Stock</option>
+                <option value="6">Reception</option>
+            </select>
+        </div>
+    </div>
+    <br />
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-3">
+            <label>item</label>
+            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+                <option value="0" disabled="" selected=""></option>
+                <option value="1">Laptop/desktop support</option>
+                <option value="2">Network - wifi</option>
+                <option value="3">Password</option>
+                <option value="4">Site Access</option>
+                <option value="5">Security Information</option>
+                <option value="6">Other</option>
+            </select>
+        </div>
+        <div class="col-xs-6">
+            <label>Short Description</label>
+            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" />
+        </div>
+    </div>
+
+    <br />
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-8">
+            <label>Work Notes</label>
+            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" />
+        </div>
+        <div class="col-xs-2">
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Update <i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+</form>
+<br />
+
+

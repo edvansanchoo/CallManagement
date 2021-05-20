@@ -88,5 +88,10 @@ namespace CallManagement.Controllers
         {
             return View();
         }
+
+        public ActionResult CloseIncident()
+        {
+            return View();
+        }
     }
 }

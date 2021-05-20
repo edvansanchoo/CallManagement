@@ -18,5 +18,15 @@ namespace CallManagement.Controllers
         {
             return View();
         }
+
+        public ActionResult EditRequest()
+        {
+            return View();
+        }
+
+        public ActionResult CloseRequest()
+        {
+            return View();
+        }
     }
 }
