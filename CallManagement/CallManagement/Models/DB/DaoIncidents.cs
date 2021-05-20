@@ -69,6 +69,7 @@ namespace CallManagement.Models.DB
             }
         }
 
+
         internal void AlterIncident(ModelIncidents incident)
         {
             try
