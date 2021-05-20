@@ -41,9 +41,9 @@
         <a href="@Url.Action("CreateIncident","Incident")" class="btn btn-default">Create New <i class="fa fa-plus"></i></a>
     </div>
     <div class="col-xs-3" style="margin-left:75%;margin-top:-8px;">
-        <form action="@Url.Action("SearchIncident","Incident")" method="post">
+        <form action="@Url.Action("AllIncident","Incident")" method="post">
             <div class="input-group input-group-lg">
-                <input class="form-control" type="text" id="searchIncident" placeholder="Search">
+                <input class="form-control" type="text" id="searchIncident" name="searchIncident" placeholder="Search">
                 <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                 </div>

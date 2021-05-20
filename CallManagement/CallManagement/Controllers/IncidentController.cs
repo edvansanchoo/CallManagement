@@ -66,17 +66,18 @@ namespace CallManagement.Controllers
         
         public ActionResult AllIncident()
         {
-            ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
-            return View();
-        }
 
-        [HttpPost]
-        public ActionResult SearchIncident()
-        {
             var NumberIncident = Request["searchIncident"];
-            ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
 
-            return RedirectToAction("AllIncident");
+            if(NumberIncident != null && NumberIncident != "")
+            {
+                ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
+            }
+            else
+            {
+                ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
+            }
+            return View();
         }
     }
 }

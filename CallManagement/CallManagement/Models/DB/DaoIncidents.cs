@@ -56,7 +56,7 @@ namespace CallManagement.Models.DB
         {
             using (SqlConnection connection = new SqlConnection(sqlConnection()))
             {
-                string queryString = "SELECT * FROM INCIDENT WHERE NUMBERINCIDENT=" + numberIncident;
+                string queryString = "SELECT * FROM INCIDENT WHERE NUMBERINCIDENT='" + numberIncident + "'";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
