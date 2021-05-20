@@ -1133,6 +1133,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CloseController.cs" />
+    <Compile Include="Controllers\EditController.cs" />
     <Compile Include="Controllers\IncidentController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\StartViewController.cs" />
@@ -1244,6 +1246,8 @@
     <Content Include="Views\Incident\CreateIncident.cshtml" />
     <Content Include="Views\Incident\AllIncident.cshtml" />
     <Content Include="Views\Request\AllRequest.cshtml" />
+    <Content Include="Views\Edit\Edit.cshtml" />
+    <Content Include="Views\Close\Close.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
