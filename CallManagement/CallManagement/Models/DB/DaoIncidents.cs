@@ -33,7 +33,7 @@ namespace CallManagement.Models.DB
             }
         }
 
-        internal void Save(ModelIncidents incident)
+        public void Save(ModelIncidents incident)
         {
             try
             {
@@ -70,13 +70,13 @@ namespace CallManagement.Models.DB
         }
 
 
-        internal void AlterIncident(ModelIncidents incident)
+        public void AlterIncident(ModelIncidents incident)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(sqlConnection()))
                 {
-                    string queryString = "UPDATE INCIDENT SET NUMBERINCIDENT = '" + incident.NumberIncident + "', CALLER = '" + incident.Caller + "', STATUS = '" + incident.Status + "', WORKNOTES = '" + incident.WorkNotes + "', RESOLUTIONINFORMATION = '" + incident.ResolutionInformation + "', DESCRIPTION = '" + incident.Description + "' WHERE NUMERINCIDENT = " + incident.NumberIncident;
+                    string queryString = "UPDATE INCIDENT SET NUMBERINCIDENT = '" + incident.NumberIncident + "', CALLER = '" + incident.Caller + "', STATUS = '" + incident.Status + "', WORKNOTES = '" + incident.WorkNotes + "', RESOLUTIONINFORMATION = '" + incident.ResolutionInformation + "', DESCRIPTION = '" + incident.Description + "' WHERE NUMBERINCIDENT ='" + incident.NumberIncident+ "'";
 
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();

@@ -38,35 +38,6 @@ namespace CallManagement.Controllers
 
         }
 
-        public void AlterIncident(String numberIncident)
-        {
-            var incidents = new ModelIncidents();
-            var daoIncidents = new DaoIncidents();
-
-            foreach (DataRow row in daoIncidents.SearchByNumberIncident(numberIncident).Rows)
-            {
-                incidents.NumberIncident = Convert.ToString(row["NumberIncident"]);
-                incidents.Caller = Convert.ToString(row["Caller"]);
-                incidents.Status = Convert.ToString(row["Status"]);
-                incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
-                incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
-                incidents.Description = Convert.ToString(row["Description"]);
-            }
-
-
-            if (incidents != null)
-            {
-                incidents.NumberIncident = Request["NumberIncident"];
-                incidents.Caller = Request["Caller"];
-                incidents.Status = Request["Status"];
-                incidents.WorkNotes = Request["WorkNotes"];
-                incidents.ResolutionInformation = Request["ResolutionInformation"];
-                incidents.Description = Request["Description"];
-
-                daoIncidents.AlterIncident(incidents);
-            
-            }
-        }
         
         public ActionResult AllIncident()
         {
@@ -84,9 +55,31 @@ namespace CallManagement.Controllers
             return View();
         }
 
-        public ActionResult EditIncident()
+        public ActionResult EditIncident(String NumberIncident)
         {
+            
+            ViewBag.ModelIncidents = new ModelIncidents().SearchIncidentByNumber(NumberIncident);
+           
             return View();
+        }
+
+
+        public ActionResult AlterIncident()
+        {
+            var incidents = new ModelIncidents();
+
+            incidents.NumberIncident = Request["NumberIncident"];
+            incidents.Caller = Request["Caller"];
+            incidents.Status = "Open";
+            incidents.WorkNotes = Request["WorkNotes"];
+            incidents.ResolutionInformation = Request["ResolutionInformation"];
+            incidents.Description = Request["Description"];
+
+            incidents.AlterIncidentByNumber(incidents);
+
+            return RedirectToAction("AllIncident");
+
+
         }
     }
 }
