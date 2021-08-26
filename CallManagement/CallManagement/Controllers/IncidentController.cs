@@ -13,7 +13,7 @@ namespace CallManagement.Controllers
     {
        
 
-        // GET: CreateIncident
+        GET: CreateIncident
         public ActionResult CreateIncident()
         {
             return View();
@@ -46,11 +46,11 @@ namespace CallManagement.Controllers
 
             if(NumberIncident != null && NumberIncident != "")
             {
-                //ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
+                ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
             }
             else
             {
-                //ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
+                ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
             }
             return View();
         }
