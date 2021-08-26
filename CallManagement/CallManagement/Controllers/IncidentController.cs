@@ -47,7 +47,6 @@ namespace CallManagement.Controllers
             if(NumberIncident != null && NumberIncident != "")
             {
                 ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
-                Console.WriteLine("testando commit");
             }
             else
             {
