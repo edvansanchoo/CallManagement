@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CALLMANAGEMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="INCIDENT">
+    <Key>
+      <PropertyRef Name="NUMBERINCIDENT" />
+    </Key>
+    <Property Name="NUMBERINCIDENT" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="CALLER" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="STATUS" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="WORKNOTES" Type="varchar" MaxLength="100" />
+    <Property Name="RESOLUTIONINFORMATION" Type="varchar" MaxLength="120" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="REQUEST">
+    <Key>
+      <PropertyRef Name="NUMBERREQUEST" />
+    </Key>
+    <Property Name="NUMBERREQUEST" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="REQUESTFOR" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="STATUS" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ITEM" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="WORKNOTES" Type="varchar" MaxLength="100" />
+    <Property Name="SHORTDESCRIPTION" Type="varchar" MaxLength="120" />
+  </EntityType>
+  <EntityContainer Name="CALLMANAGEMENTModelStoreContainer">
+    <EntitySet Name="INCIDENT" EntityType="Self.INCIDENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REQUEST" EntityType="Self.REQUEST" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -90,5 +90,6 @@ namespace CallManagement.Models.ViewModel
                 lista.Add(request);
             }
             return lista;
+        }
     }
 }

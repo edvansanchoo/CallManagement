@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CALLMANAGEMENTModelStoreContainer" CdmEntityContainer="CALLMANAGEMENTEntities">
+    <EntitySetMapping Name="INCIDENT">
+      <EntityTypeMapping TypeName="CALLMANAGEMENTModel.INCIDENT">
+        <MappingFragment StoreEntitySet="INCIDENT">
+          <ScalarProperty Name="NUMBERINCIDENT" ColumnName="NUMBERINCIDENT" />
+          <ScalarProperty Name="CALLER" ColumnName="CALLER" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="WORKNOTES" ColumnName="WORKNOTES" />
+          <ScalarProperty Name="RESOLUTIONINFORMATION" ColumnName="RESOLUTIONINFORMATION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REQUEST">
+      <EntityTypeMapping TypeName="CALLMANAGEMENTModel.REQUEST">
+        <MappingFragment StoreEntitySet="REQUEST">
+          <ScalarProperty Name="NUMBERREQUEST" ColumnName="NUMBERREQUEST" />
+          <ScalarProperty Name="REQUESTFOR" ColumnName="REQUESTFOR" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ITEM" ColumnName="ITEM" />
+          <ScalarProperty Name="WORKNOTES" ColumnName="WORKNOTES" />
+          <ScalarProperty Name="SHORTDESCRIPTION" ColumnName="SHORTDESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

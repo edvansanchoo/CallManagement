@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CALLMANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="INCIDENT">
+    <Key>
+      <PropertyRef Name="NUMBERINCIDENT" />
+    </Key>
+    <Property Name="NUMBERINCIDENT" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CALLER" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WORKNOTES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RESOLUTIONINFORMATION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="REQUEST">
+    <Key>
+      <PropertyRef Name="NUMBERREQUEST" />
+    </Key>
+    <Property Name="NUMBERREQUEST" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REQUESTFOR" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEM" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WORKNOTES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SHORTDESCRIPTION" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CALLMANAGEMENTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="INCIDENT" EntityType="Self.INCIDENT" />
+    <EntitySet Name="REQUEST" EntityType="Self.REQUEST" />
+  </EntityContainer>
+</Schema>

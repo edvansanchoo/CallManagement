@@ -2,10 +2,12 @@
 
     $('#btnAdd').on('click', function () {
 
+        alert("Incident inserted");
+
         if (CheckBlankFieldsProperty()) {
             $("#btnAdd").attr("disabled", true);
         }
-    }
+    });
 });
 
 function CheckBlankFieldsProperty() {
@@ -36,3 +38,12 @@ function CheckBlankFieldsProperty() {
         return true;
     }
 }
+const label =
+    document.querySelector("#labelSelect");
+const select =
+    document.querySelector("#txtLabelName");
+
+select.addEventListener("change", (ev) => {
+    label.innerHTML = `meu ${ev.target.value}
+legal`
+})
