@@ -39,12 +39,8 @@
         </div>
 
         <div class="col-xs-2">
-            <label>Still getting to work? </label>
-            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
-                <option value="0" disabled="" selected=""></option>
-                <option value="1">Sim</option>
-                <option value="2">Não</option>
-            </select>
+            <label>Technician ID</label>
+            <input type="number" class="form-control" id="idTecnico" name="idTecnico" required autocomplete="off" value="" />
         </div>
     </div>
     <br />
@@ -53,12 +49,8 @@
 
     <div class="row">
         <div class="col-xs-3">
-            <label>Type</label>
-            <select type="text" class="form-control" name="LabelName" id="txtLabelType" required autocomplete="off">
-                <option value="0" disabled="" selected=""></option>
-                <option value="1">Hardware Computer</option>
-                <option value="2">Software Computer</option>
-            </select>
+            <label>Technician Name</label>
+            <input type="text" class="form-control" id="idNameTec" name="idNameTec" required autocomplete="off" value="" />
         </div>
         <div class="col-xs-6">
             <label>Short Description</label>
@@ -75,7 +67,7 @@
             <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" value="@incident.WorkNotes"/>
         </div>
         <div class="col-xs-2">
-            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Update <i class="fa fa-plus"></i></button>
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnEdit">Sign to me <i class="fa fa-plus"></i></button>
         </div>
     </div>
 </form>
