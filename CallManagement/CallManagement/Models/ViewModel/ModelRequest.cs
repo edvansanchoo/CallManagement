@@ -15,6 +15,11 @@ namespace CallManagement.Models.ViewModel
         public String Item { get; set; }
         public String WorkNotes { get; set; }
         public String ShortDescription { get; set; }
+        public int IdTecnico { get; set; }
+        public int IdUsuario { get; set; }
+        public String NomeTecnico { get; set; }
+        public String TempoResolucao { get; set; }
+
 
         public string generationNumberRequest()
         {
@@ -90,5 +95,6 @@ namespace CallManagement.Models.ViewModel
                 lista.Add(request);
             }
             return lista;
+        }
     }
 }
