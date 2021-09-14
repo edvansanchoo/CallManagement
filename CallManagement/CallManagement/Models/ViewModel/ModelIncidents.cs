@@ -15,6 +15,13 @@ namespace CallManagement.Models.ViewModel
         public String WorkNotes { get; set; }
         public String ResolutionInformation { get; set; }
         public String Description { get; set; }
+        public int IdTecnico { get; set; }
+        public int IdUsuario { get; set; }
+        public String Tecnico { get; set; }
+        public String TempoResolucao { get; set; }
+        public String SetorProblema { get; set; }
+
+
 
 
 

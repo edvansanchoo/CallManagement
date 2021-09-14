@@ -13,7 +13,7 @@ namespace CallManagement.Controllers
     {
        
 
-        GET: CreateIncident
+        //GET: CreateIncident
         public ActionResult CreateIncident()
         {
             return View();
