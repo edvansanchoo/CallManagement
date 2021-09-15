@@ -51,14 +51,77 @@ namespace CallManagement.Controllers
 
         public ActionResult EditRequest(String NumberRequest)
         {
-            ViewBag.ModelRequest = new ModelRequest().SearchRequestByNumber(NumberRequest);
+            ModelRequest request = new ModelRequest();
+            List<ModelRequest> lista = new ModelRequest().SearchRequestByNumber(NumberRequest);
+
+            foreach(ModelRequest modelrequest in lista){
+
+                request.NumberRequest = modelrequest.NumberRequest;
+                request.RequestFor = modelrequest.RequestFor;
+                request.Status = modelrequest.Status;
+                request.Item = modelrequest.Item;
+                request.WorkNotes = modelrequest.WorkNotes;
+                request.ShortDescription = modelrequest.ShortDescription;
+
+            }
+
+            ViewBag.ModelRequest = request;
             return View();
         }
 
-        public ActionResult CloseRequest()
+        public ActionResult CloseRequest(String NumberRequest)
         {
+            ModelRequest request = new ModelRequest();
+            List<ModelRequest> lista = new ModelRequest().SearchRequestByNumber(NumberRequest);
+
+            foreach (ModelRequest modelrequest in lista)
+            {
+
+                request.NumberRequest = modelrequest.NumberRequest;
+                request.RequestFor = modelrequest.RequestFor;
+                request.Status = modelrequest.Status;
+                request.Item = modelrequest.Item;
+                request.WorkNotes = modelrequest.WorkNotes;
+                request.ShortDescription = modelrequest.ShortDescription;
+
+            }
+
+            ViewBag.ModelRequest = request;
             return View();
         }
 
-    }
+        public ActionResult AlterRequest()
+        {
+            ModelRequest request = new ModelRequest();
+
+            request.NumberRequest = Request["CallerRequest"];
+            request.RequestFor = Request["Caller"];
+            request.Status = "Assigned";
+            request.Item = Request["LabelName"];
+            request.WorkNotes = Request["WorkNotes"];
+            request.ShortDescription = Request["ShortDescription"];
+
+            request.AlterRequest();
+
+            return RedirectToAction("AllRequest");
+            return View();
+        }
+
+        public ActionResult ClosingRequest()
+        {
+            ModelRequest request = new ModelRequest();
+
+            request.NumberRequest = Request["CallerRequest"];
+            request.RequestFor = Request["Caller"];
+            request.Status = "Closed";
+            request.Item = Request["LabelName"];
+            request.WorkNotes = Request["WorkNotes"];
+            request.ShortDescription = Request["ShortDescription"];
+
+            request.AlterRequest();
+
+            return RedirectToAction("AllRequest");
+            return View();
+
+        }
 }
