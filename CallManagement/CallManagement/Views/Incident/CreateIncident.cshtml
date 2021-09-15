@@ -27,13 +27,13 @@
     <input id="dataProperties" name="DataProperties" hidden />
     <div class="row">
         <div class="col-xs-4">
-            <label>Requested By</label>
+            <label>Requested By <span class="text-danger">*</span></label>
             <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" />
         </div>
 
         <div class="col-xs-2">
-            <label for="txtLabelName" id="labelSelect">meu label legal</label>
-            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
+            <label for="txtLabelName" id="labelSelect">meu label legal <span class="text-danger">*</span></label>
+            <select type="text" class="form-control" name="txtPriority" id="txtPriority" required autocomplete="off">
                 <option value="0" disabled="" selected="">Choose</option>
                 <option value="edvan">Sim</option>
                 <option value="let">Não</option>
@@ -46,15 +46,15 @@
 
     <div class="row">
         <div class="col-xs-3">
-            <label>Type</label>
-            <select type="text" class="form-control" name="LabelName" id="txtLabelType" required autocomplete="off">
+            <label>Type <span class="text-danger">*</span></label>
+            <select type="text" class="form-control" name="txtType" id="txtType" required autocomplete="off">
                 <option value="0" disabled="" selected=""></option>
                 <option value="1">Hardware Computer</option>
                 <option value="2">Software Computer</option>
             </select>
         </div>
         <div class="col-xs-6">
-            <label>Short Description</label>
+            <label>Short Description <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="Description" name="Description" required autocomplete="off"  />
         </div>
         <div class="col-xs-2">

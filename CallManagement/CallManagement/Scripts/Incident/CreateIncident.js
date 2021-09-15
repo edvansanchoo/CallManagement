@@ -38,6 +38,8 @@ function CheckBlankFieldsProperty() {
         return true;
     }
 }
+
+
 const label =
     document.querySelector("#labelSelect");
 const select =
