@@ -70,5 +70,23 @@ namespace CallManagement.Models.DB
                 return table;
             }
         }
+        public void AlterRequest(ModelRequest request)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(sqlConnection()))
+                {
+                    string queryString = "UPDATE REQUEST SET NUMBERREQUEST = '" + request.NumberRequest + "', REQUESTFOR = '" + request.RequestFor + "', STATUS = '" + request.Status + "', ITEM = '" + request.Item + "', WORKNOTES = '" + request.WorkNotes + "', SHORTDESCRIPTION = '" + request.ShortDescription + "' WHERE NUMBERREQUEST = '" + request.NumberRequest+ "'";
+
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

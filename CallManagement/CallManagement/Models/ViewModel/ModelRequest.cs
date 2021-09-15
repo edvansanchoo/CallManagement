@@ -92,5 +92,10 @@ namespace CallManagement.Models.ViewModel
             }
             return lista;
         }
+
+        internal void AlterRequest()
+        {
+            new DaoRequests().AlterRequest(this);
+        }
     }
 }
