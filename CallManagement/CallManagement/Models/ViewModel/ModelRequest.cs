@@ -53,10 +53,11 @@ namespace CallManagement.Models.ViewModel
             return lista;
         }
 
-        public ModelRequest SearchRequestByNumber(string numberRequest)
+        public List<ModelRequest> SearchRequestByNumber(string numberRequest)
         {
             
             var request = new ModelRequest();
+            var lista = new List<ModelRequest>();
             var daoRequest = new DaoRequests();
             foreach (DataRow row in daoRequest.SearchByNumberRequest(numberRequest).Rows)
             {
@@ -68,9 +69,9 @@ namespace CallManagement.Models.ViewModel
                 request.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 request.ShortDescription = Convert.ToString(row["ShortDescription"]);
 
-                    
+                lista.Add(request);     
             }
-            return request;
+            return lista;
         }
 
         public List<ModelRequest> SearchRequest(string numberRequest)

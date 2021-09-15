@@ -36,11 +36,11 @@ namespace CallManagement.Controllers
         public ActionResult AllRequest()
         {
 
-            var NumberIncident = Request["searchIncident"];
+            var NumberRequest = Request["searchRequest"];
 
-            if (NumberIncident != null && NumberIncident != "")
+            if (NumberRequest != null && NumberRequest != "")
             {
-                ViewBag.ModelRequest = new ModelRequest().SearchRequestByNumber(NumberIncident);
+                ViewBag.ModelRequest = new ModelRequest().SearchRequestByNumber(NumberRequest);
             }
             else
             {
