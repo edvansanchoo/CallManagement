@@ -70,7 +70,7 @@ namespace CallManagement.Controllers
 
             incidents.NumberIncident = Request["NumberIncident"];
             incidents.Caller = Request["Caller"];
-            incidents.Status = "Open";
+            incidents.Status = "Assigned";
             incidents.WorkNotes = Request["WorkNotes"];
             incidents.ResolutionInformation = Request["ResolutionInformation"];
             incidents.Description = Request["Description"];
