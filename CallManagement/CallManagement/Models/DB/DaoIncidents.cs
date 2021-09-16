@@ -39,7 +39,7 @@ namespace CallManagement.Models.DB
             {
                 using (SqlConnection connection = new SqlConnection(sqlConnection()))
                 {
-                    string queryString = "INSERT INTO INCIDENT(NUMBERINCIDENT, CALLER, STATUS, WORKNOTES, RESOLUTIONINFORMATION, DESCRIPTION) VALUES('" + incident.NumberIncident + "','" + incident.Caller + "','" + incident.Status + "','"+incident.WorkNotes+"','"+incident.ResolutionInformation+ "','" + incident.Description + "')";
+                    string queryString = "INSERT INTO INCIDENT(NUMBERINCIDENT, CALLER, STATUS, WORKNOTES, RESOLUTIONINFORMATION, DESCRIPTION, TempoResolucao) VALUES('" + incident.NumberIncident + "','" + incident.Caller + "','" + incident.Status + "','"+incident.WorkNotes+"','"+incident.ResolutionInformation+ "','" + incident.Description + "', '" + incident.TempoResolucao + "')";
                     
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
@@ -76,7 +76,7 @@ namespace CallManagement.Models.DB
             {
                 using (SqlConnection connection = new SqlConnection(sqlConnection()))
                 {
-                    string queryString = "UPDATE INCIDENT SET NUMBERINCIDENT = '" + incident.NumberIncident + "', CALLER = '" + incident.Caller + "', STATUS = '" + incident.Status + "', WORKNOTES = '" + incident.WorkNotes + "', RESOLUTIONINFORMATION = '" + incident.ResolutionInformation + "', DESCRIPTION = '" + incident.Description + "' WHERE NUMBERINCIDENT ='" + incident.NumberIncident+ "'";
+                    string queryString = "UPDATE INCIDENT SET NUMBERINCIDENT = '" + incident.NumberIncident + "', CALLER = '" + incident.Caller + "', STATUS = '" + incident.Status + "', WORKNOTES = '" + incident.WorkNotes + "', RESOLUTIONINFORMATION = '" + incident.ResolutionInformation + "', DESCRIPTION = '" + incident.Description + "', Tecnico = '" + incident.Tecnico + "' WHERE NUMBERINCIDENT ='" + incident.NumberIncident+ "'";
 
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();

@@ -39,6 +39,15 @@ namespace CallManagement.Models.ViewModel
                 incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
                 incidents.Description = Convert.ToString(row["Description"]);
+                incidents.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    incidents.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else {
+                    incidents.Tecnico = "";
+                }
+                
 
                 lista.Add(incidents);
             }
@@ -72,10 +81,40 @@ namespace CallManagement.Models.ViewModel
                 incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
                 incidents.Description = Convert.ToString(row["Description"]);
+                incidents.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    incidents.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else
+                {
+                    incidents.Tecnico = "";
+                }
 
-                
             }
             return incidents;
+        }
+
+        public void dateLimiteRequest()
+        {
+            DateTime dateTime = new DateTime();
+            dateTime = DateTime.Today;
+
+            int day = 0;
+            String dataLimite = dateTime.ToString();
+            foreach (String S in dataLimite.Split('/'))
+            {
+                if (dateTime.Day.ToString() == S)
+                {
+                    day = 2 + int.Parse(S);
+                    this.TempoResolucao += day.ToString();
+                }
+                else
+                {
+                    this.TempoResolucao += "/" + S;
+                }
+
+            }
         }
 
         public void AlterIncidentByNumber(ModelIncidents incidents)
@@ -107,7 +146,4 @@ namespace CallManagement.Models.ViewModel
             return lista;
         }
     }
-
-
-    
 }
