@@ -26,7 +26,10 @@ namespace CallManagement.Controllers
             request.RequestFor = Request["RequestBy"];
             request.Status = "Open";
             request.Item = Request["Item"];
-            request.ShortDescription = Request["SortDescription"];
+            request.ShortDescription = Request["ShortDescription"];
+            //request.IdTecnico = Request["idTecnicoRequest"];
+            request.Tecnico = Request["idNameTecRequest"];
+            request.dateLimiteRequest();
 
             request.Save();
 
@@ -101,6 +104,8 @@ namespace CallManagement.Controllers
             request.Item = Request["LabelName"];
             request.WorkNotes = Request["WorkNotes"];
             request.ShortDescription = Request["ShortDescription"];
+            //request.IdTecnico = Request["idTecnicoRequest"];
+            request.Tecnico = Request["idNameTecRequest"];
 
             request.AlterRequest();
 
