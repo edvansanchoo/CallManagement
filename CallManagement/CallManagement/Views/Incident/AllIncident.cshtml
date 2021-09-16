@@ -79,8 +79,9 @@
                     <td>@p.Status</td>
                     <td>@p.Description</td>
                     <td>@p.WorkNotes</td>
-                    <td></td>
-                    <td></td>
+                    <td>@p.TempoResolucao</td>
+                    <td>@p.Tecnico</td>
+                    
 
                     <td><a href="@Url.Action("EditIncident","Incident",new { NumberIncident = p.NumberIncident})" class="btn btn-info"><i class="fa fa-edit"></i></a></td>
                     <td><a href="@Url.Action("CloseIncident","Incident",new { NumberIncident = p.NumberIncident})" class="btn btn-danger"><i class="fa fa-close"></i></a></td>

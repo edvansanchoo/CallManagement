@@ -31,6 +31,7 @@ namespace CallManagement.Controllers
             incidents.WorkNotes = Request[""];
             incidents.ResolutionInformation = "";
             incidents.Description = Request["Description"];
+            incidents.dateLimiteRequest();
 
             incidents.Save();
             
@@ -64,7 +65,7 @@ namespace CallManagement.Controllers
         }
 
 
-        public ActionResult AlterIncident()
+        public object AlterIncident()
         {
             var incidents = new ModelIncidents();
 
@@ -74,6 +75,8 @@ namespace CallManagement.Controllers
             incidents.WorkNotes = Request["WorkNotes"];
             incidents.ResolutionInformation = Request["ResolutionInformation"];
             incidents.Description = Request["Description"];
+            //incidents.IdTecnico = Request["idTecnico"];
+            incidents.Tecnico = Request["idNameTec"];
 
             incidents.AlterIncidentByNumber(incidents);
 
