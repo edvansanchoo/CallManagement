@@ -9,7 +9,7 @@ namespace CallManagement.Controllers
 {
     public class RequestController : Controller
     {
-       // GET: Request
+        // GET: Request
         public ActionResult CreateRequest()
         {
             return View();
@@ -19,8 +19,8 @@ namespace CallManagement.Controllers
         public ActionResult Save()
         {
             ModelRequest request = new ModelRequest();
-            
-            
+
+
 
             request.NumberRequest = request.generationNumberRequest();
             request.RequestFor = Request["RequestBy"];
@@ -54,7 +54,8 @@ namespace CallManagement.Controllers
             ModelRequest request = new ModelRequest();
             List<ModelRequest> lista = new ModelRequest().SearchRequestByNumber(NumberRequest);
 
-            foreach(ModelRequest modelrequest in lista){
+            foreach (ModelRequest modelrequest in lista)
+            {
 
                 request.NumberRequest = modelrequest.NumberRequest;
                 request.RequestFor = modelrequest.RequestFor;
@@ -124,4 +125,5 @@ namespace CallManagement.Controllers
             return View();
 
         }
+    }
 }
