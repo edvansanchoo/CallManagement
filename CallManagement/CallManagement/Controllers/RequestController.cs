@@ -125,6 +125,5 @@ namespace CallManagement.Controllers
             return View();
 
         }
-
     }
 }
