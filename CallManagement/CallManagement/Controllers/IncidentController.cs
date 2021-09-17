@@ -94,6 +94,7 @@ namespace CallManagement.Controllers
             incidents.WorkNotes = Request["WorkNotes"];
             incidents.ResolutionInformation = Request["ResolutionInformation"];
             incidents.Description = Request["Description"];
+            incidents.Tecnico = Request["idNameTec"];
 
             incidents.AlterIncidentByNumber(incidents);
 
