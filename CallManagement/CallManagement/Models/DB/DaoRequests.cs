@@ -23,7 +23,7 @@ namespace CallManagement.Models.DB
             {
                 using (SqlConnection connection = new SqlConnection(sqlConnection()))
                 {
-                    string queryString = "INSERT INTO REQUEST(NUMBERREQUEST, REQUESTFOR, STATUS, ITEM, WORKNOTES, SHORTDESCRIPTION) VALUES('" + request.NumberRequest + "','" + request.RequestFor + "','" + request.Status + "','" + request.Item + "','" + request.WorkNotes + "','" + request.ShortDescription + "')";
+                    string queryString = "INSERT INTO REQUEST(NUMBERREQUEST, REQUESTFOR, STATUS, ITEM, WORKNOTES, SHORTDESCRIPTION, TempoResolucao) VALUES('" + request.NumberRequest + "','" + request.RequestFor + "','" + request.Status + "','" + request.Item + "','" + request.WorkNotes + "','" + request.ShortDescription + "', '" + request.TempoResolucao + "')";
 
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
@@ -76,7 +76,7 @@ namespace CallManagement.Models.DB
             {
                 using (SqlConnection connection = new SqlConnection(sqlConnection()))
                 {
-                    string queryString = "UPDATE REQUEST SET NUMBERREQUEST = '" + request.NumberRequest + "', REQUESTFOR = '" + request.RequestFor + "', STATUS = '" + request.Status + "', ITEM = '" + request.Item + "', WORKNOTES = '" + request.WorkNotes + "', SHORTDESCRIPTION = '" + request.ShortDescription + "' WHERE NUMBERREQUEST = '" + request.NumberRequest+ "'";
+                    string queryString = "UPDATE REQUEST SET NUMBERREQUEST = '" + request.NumberRequest + "', REQUESTFOR = '" + request.RequestFor + "', STATUS = '" + request.Status + "', ITEM = '" + request.Item + "', WORKNOTES = '" + request.WorkNotes + "', SHORTDESCRIPTION = '" + request.ShortDescription + "' , Tecnico = '" + request.Tecnico + "'  WHERE NUMBERREQUEST = '" + request.NumberRequest+ "'";
 
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
