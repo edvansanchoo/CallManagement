@@ -20,8 +20,6 @@ namespace CallManagement.Controllers
         {
             ModelRequest request = new ModelRequest();
 
-
-
             request.NumberRequest = request.generationNumberRequest();
             request.RequestFor = Request["RequestBy"];
             request.Status = "Open";
@@ -66,7 +64,8 @@ namespace CallManagement.Controllers
                 request.Item = modelrequest.Item;
                 request.WorkNotes = modelrequest.WorkNotes;
                 request.ShortDescription = modelrequest.ShortDescription;
-
+                //request.IdTecnico = modelrequest.IdTecnico;
+                request.Tecnico = modelrequest.Tecnico;
             }
 
             ViewBag.ModelRequest = request;
@@ -87,6 +86,8 @@ namespace CallManagement.Controllers
                 request.Item = modelrequest.Item;
                 request.WorkNotes = modelrequest.WorkNotes;
                 request.ShortDescription = modelrequest.ShortDescription;
+                //request.IdTecnico = modelrequest.IdTecnico;
+                request.Tecnico = modelrequest.Tecnico;
 
             }
 
@@ -123,6 +124,8 @@ namespace CallManagement.Controllers
             request.Item = Request["LabelName"];
             request.WorkNotes = Request["WorkNotes"];
             request.ShortDescription = Request["ShortDescription"];
+            //request.IdTecnico = Request["idTecnicoRequest"];
+            request.Tecnico = Request["idNameTecRequest"];
 
             request.AlterRequest();
 
