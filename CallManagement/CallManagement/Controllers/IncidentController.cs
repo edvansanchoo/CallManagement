@@ -65,7 +65,7 @@ namespace CallManagement.Controllers
         }
 
 
-        public object AlterIncident()
+        public ActionResult AlterIncident()
         {
             var incidents = new ModelIncidents();
 
