@@ -124,7 +124,7 @@ namespace CallManagement.Models.ViewModel
             {
                 if (dateTime.Day.ToString() == S)
                 {
-                    day = 2 + int.Parse(S);
+                    day = 7 + int.Parse(S);
                     this.TempoResolucao += day.ToString();
                 }
                 else
