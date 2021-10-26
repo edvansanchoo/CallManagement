@@ -29,18 +29,11 @@
     <div class="row">
         <div class="col-xs-2">
             <label>Request Number</label>
-            <input type="text" class="form-control" name="CallerRequest" id="CallerRequest" required autocomplete="off" value="@request.NumberRequest"/>
+            <input readonly="" type="text" class="form-control" name="CallerRequest" id="CallerRequest" required autocomplete="off" value="@request.NumberRequest" />
         </div>
         <div class="col-xs-4">
             <label>Requested By</label>
-            <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" value=" @request.RequestFor"/>
-        </div>
-
-        <div class="col-xs-2">
-            <label>Technician ID</label>
-
-            <input type="text" class="form-control" name="idTecnicoRequest" id="idTecnicoRequest" required autocomplete="off">
-
+            <input readonly="" type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" value=" @request.RequestFor" />
         </div>
     </div>
     <br />
@@ -51,11 +44,11 @@
         <div class="col-xs-3">
             <label>Technician Name</label>
 
-            <input type="text" class="form-control" name="idNameTecRequest" id="idNameTecRequest" required autocomplete="off">
+            <input type="text" class="form-control" name="idNameTecRequest" id="idNameTecRequest" required autocomplete="off" value="@request.Tecnico">
         </div>
         <div class="col-xs-6">
             <label>Short Description</label>
-            <input type="text" class="form-control" id="ShortDescription" name="ShortDescription" required autocomplete="off" value="@request.ShortDescription"/>
+            <input readonly="" type="text" class="form-control" id="ShortDescription" name="ShortDescription" required autocomplete="off" value="@request.ShortDescription" />
         </div>
     </div>
 
@@ -66,13 +59,20 @@
     <div class="row">
         <div class="col-xs-8">
             <label>Work Notes</label>
-            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" value="@request.WorkNotes"/>
+            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off" value="@request.WorkNotes" />
         </div>
         <div class="col-xs-2">
-            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Sign to me <i class="fa fa-plus"></i></button>
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnEdit">Sign to me <i class="fa fa-plus"></i></button>
+        </div>
+        <div class="col-xs-2">
+            <a href="@Url.Action("AllRequest","Request")" type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary">Back <i class="fa fa-arrow-left"></i></a>
         </div>
     </div>
 </form>
 <br />
+
+<script src="~/Scripts/Request/EditRequest.js"></script>
+
+
 
 

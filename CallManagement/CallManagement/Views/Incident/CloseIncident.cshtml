@@ -30,20 +30,16 @@
     <div class="row">
         <div class="col-xs-2">
             <label>Incident Number</label>
-            <input type="text" class="form-control" name="NumberIncident" id="NumberIncident"  required autocomplete="off" value="@incident.NumberIncident"/>
+            <input readonly="" type="text" class="form-control" name="NumberIncident" id="NumberIncident"  required autocomplete="off" value="@incident.NumberIncident"/>
         </div>
         <div class="col-xs-4">
             <label>Requested By</label>
-            <input type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" value="@incident.Caller"/>
+            <input readonly="" type="text" class="form-control" name="Caller" id="Caller" required autocomplete="off" value="@incident.Caller"/>
         </div>
 
         <div class="col-xs-2">
-            <label>Still getting to work? </label>
-            <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
-                <option value="0" disabled="" selected=""></option>
-                <option value="1">Sim</option>
-                <option value="2">Não</option>
-            </select>
+            <label>Signed To </label>
+            <input readonly="" type="text"  class="form-control" name="idNameTec" id="idNameTec" value="@incident.Tecnico" required autocomplete="off">
         </div>
     </div>
     <br />
@@ -51,17 +47,9 @@
     <br />
 
     <div class="row">
-        <div class="col-xs-3">
-            <label>Type</label>
-            <select type="text" class="form-control" name="LabelName" id="txtLabelType" required autocomplete="off">
-                <option value="0" disabled="" selected=""></option>
-                <option value="1">Hardware Computer</option>
-                <option value="2">Software Computer</option>
-            </select>
-        </div>
         <div class="col-xs-6">
             <label>Short Description</label>
-            <input type="text" class="form-control" id="Description" name="Description" required autocomplete="off" value="@incident.Description"/>
+            <input readonly="" type="text" class="form-control" id="Description" name="Description" required autocomplete="off" value="@incident.Description"/>
         </div>
     </div>
     <br />
@@ -71,7 +59,7 @@
     <div class="row">
         <div class="col-xs-8">
             <label>Work Notes</label>
-            <input type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off"value="@incident.WorkNotes" />
+            <input readonly="" type="text" class="form-control" id="WorkNotes" name="WorkNotes" required autocomplete="off"value="@incident.WorkNotes" />
         </div>
     </div>
 
@@ -82,15 +70,18 @@
     <div class="row">
         <div class="col-xs-8">
             <label>Resolution Information</label>
-            <input type="text" class="form-control" id="ResolutionInformation" name="ResolutionInformation" required autocomplete="off" value="@incident.ResolutionInformation"/>
+            <input required autocomplete="off" type="text" class="form-control" id="ResolutionInformation" name="ResolutionInformation"  value="@incident.ResolutionInformation"/>
         </div>
         <div class="col-xs-2">
-            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Close Incident <i></i></button>
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnClose">Close Incident <i class="fa fa-close"></i></button>
+        </div>
+        <div class="col-xs-2">
+            <a href="@Url.Action("AllIncident","Incident")" type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" >Back <i class="fa fa-arrow-left"></i></a>
         </div>
     </div>
 </form>
 <br />
 
-<script src="~/Scripts/Incident/CreateIncident.js"></script>
+<script src="~/Scripts/Incident/CloseIncident.js"></script>
 
 

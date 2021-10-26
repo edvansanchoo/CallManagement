@@ -51,7 +51,15 @@ namespace CallManagement.Models.ViewModel
                 request.Status = Convert.ToString(row["Status"]);
                 request.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 request.ShortDescription = Convert.ToString(row["ShortDescription"]);
-
+                request.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    request.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else
+                {
+                    request.Tecnico = "";
+                }
                 lista.Add(request);
             }
             return lista;
@@ -72,7 +80,15 @@ namespace CallManagement.Models.ViewModel
                 request.Status = Convert.ToString(row["Status"]);
                 request.WorkNotes = Convert.ToString(row["WorkNotes"]);
                 request.ShortDescription = Convert.ToString(row["ShortDescription"]);
-
+                request.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    request.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else
+                {
+                    request.Tecnico = "";
+                }
                 lista.Add(request);     
             }
             return lista;
@@ -95,6 +111,28 @@ namespace CallManagement.Models.ViewModel
                 lista.Add(request);
             }
             return lista;
+        }
+
+        public void dateLimiteRequest()
+        {
+            DateTime dateTime = new DateTime();
+            dateTime = DateTime.Today;
+
+            int day = 0;
+            String dataLimite = dateTime.ToString();
+            foreach (String S in dataLimite.Split('/'))
+            {
+                if (dateTime.Day.ToString() == S)
+                {
+                    day = 7 + int.Parse(S);
+                    this.TempoResolucao += day.ToString();
+                }
+                else
+                {
+                    this.TempoResolucao += "/" + S;
+                }
+
+            }
         }
 
         internal void AlterRequest()
