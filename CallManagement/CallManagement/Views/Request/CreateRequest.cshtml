@@ -32,7 +32,7 @@
         </div>
 
         <div class="col-xs-2">
-            <label>Sector<span class="text-danger">*</span></label>
+            <label>Sector</label>
             <select type="text" class="form-control" name="LabelName" id="txtLabelName" required autocomplete="off">
                 <option value="0" disabled="" selected=""></option>
                 <option value="1">HR</option>
@@ -50,18 +50,20 @@
 
     <div class="row">
         <div class="col-xs-3">
-            <label>item<span class="text-danger">*</span></label>
+            <label>item</label>
             <input type="text" class="form-control" name="Item" id="Item" required autocomplete="off" />
         </div>
         <div class="col-xs-6">
             <label>Short Description<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="SortDescription" name="SortDescription" required autocomplete="off" />
+            <input type="text" class="form-control" id="ShortDescription" name="ShortDescription" required autocomplete="off" />
         </div>
         <div class="col-xs-2">
-            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnAdd">Save <i class="fa fa-plus"></i></button>
+            <button type="submit" style="margin-left:-10px;margin-top:24px;" class="btn btn-primary" id="btnSave">Save <i class="fa fa-plus"></i></button>
         </div>
     </div>
 </form>
 <br />
+
+<script src="~/Scripts/Request/CreateRequest.js"></script>
 
 

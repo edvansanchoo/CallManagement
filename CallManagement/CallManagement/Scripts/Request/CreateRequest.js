@@ -1,49 +1,23 @@
 ﻿$(document).ready(function () {
 
-$('#btnAdd').on('click', function () {
+    $('#btnSave').on('click', function () {
+        if (CheckBlankFieldsProperty()) {
+        }
 
-    if (CheckBlankFieldsProperty()) {
-        $("#btnAdd").attr("disabled", true);
-    }
+    });
 });
-});
+
 
 function CheckBlankFieldsProperty() {
-    var propertyCaller = $('#txtCaller').val();
-    var propertyLabelName = $('#txtLabelName').val();
-    var propertyLabelType = $('#txtLabelType').val();
-    var propertyWorkNotes = $('#txtWorkNotes').val();
-    var emptyFields = "";
+    var propertyCaller = $('#RequestBy').val();
+    var propertyDescription = $('#SortDescription').val();
 
-    if (propertyCaller == "") {
-        emptyFields += "Caller\n";
-    }
-    if (propertyLabelName == "") {
-        emptyFields += "Description\n";
-    }
-    if (propertyLabelType == "") {
-        emptyFields += "Type\n";
-    }
-    if (propertyWorkNotes == "") {
-        emptyFields += "Work Notes\n";
-    }
-
-    if (emptyFields != "") {
-        alert("Empty Fields: \n\n" + emptyFields);
+    if (propertyCaller == "" || propertyDescription == "") {
+        alert("Please fill all the information!");
         return false;
-    } else {
+    }
+    else {
         $("#btnAdd").attr("disabled", false);
-        return true;
+        alert("Request inserted!");
     }
 }
-
-
-const label =
-    document.querySelector("#labelSelect");
-const select =
-    document.querySelector("#txtLabelName");
-
-select.addEventListener("change", (ev) => {
-    label.innerHTML = `meu ${ev.target.value}
-legal`
-})
