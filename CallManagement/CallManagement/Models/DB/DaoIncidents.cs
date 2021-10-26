@@ -33,7 +33,7 @@ namespace CallManagement.Models.DB
             }
         }
 
-        public void Save(ModelIncidents incident)
+        public void Save(ModelIncident incident)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace CallManagement.Models.DB
         }
 
 
-        public void AlterIncident(ModelIncidents incident)
+        public void AlterIncident(ModelIncident incident)
         {
             try
             {

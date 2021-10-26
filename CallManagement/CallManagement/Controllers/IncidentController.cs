@@ -22,7 +22,7 @@ namespace CallManagement.Controllers
         [HttpPost]
         public ActionResult Save()
         {
-            ModelIncidents incidents = new ModelIncidents();
+            ModelIncident incidents = new ModelIncident();
 
 
             incidents.NumberIncident = incidents.generationNumberIncident();
@@ -47,11 +47,11 @@ namespace CallManagement.Controllers
 
             if(NumberIncident != null && NumberIncident != "")
             {
-                ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
+                ViewBag.ModelIncidents = new ModelIncident().SearchIncident(NumberIncident);
             }
             else
             {
-                ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
+                ViewBag.ModelIncidents = new ModelIncident().ListIncident();
             }
             return View();
         }
@@ -59,7 +59,7 @@ namespace CallManagement.Controllers
         public ActionResult EditIncident(String NumberIncident)
         {
             
-            ViewBag.ModelIncidents = new ModelIncidents().SearchIncidentByNumber(NumberIncident);
+            ViewBag.ModelIncidents = new ModelIncident().SearchIncidentByNumber(NumberIncident);
            
             return View();
         }
@@ -67,7 +67,7 @@ namespace CallManagement.Controllers
 
         public object AlterIncident()
         {
-            var incidents = new ModelIncidents();
+            var incidents = new ModelIncident();
 
             incidents.NumberIncident = Request["NumberIncident"];
             incidents.Caller = Request["Caller"];
@@ -86,7 +86,7 @@ namespace CallManagement.Controllers
 
         public ActionResult ClosingIncident()
         {
-            var incidents = new ModelIncidents();
+            var incidents = new ModelIncident();
 
             incidents.NumberIncident = Request["NumberIncident"];
             incidents.Caller = Request["Caller"];
@@ -94,6 +94,7 @@ namespace CallManagement.Controllers
             incidents.WorkNotes = Request["WorkNotes"];
             incidents.ResolutionInformation = Request["ResolutionInformation"];
             incidents.Description = Request["Description"];
+            incidents.Tecnico = Request["idNameTec"];
 
             incidents.AlterIncidentByNumber(incidents);
 
@@ -103,7 +104,7 @@ namespace CallManagement.Controllers
 
         public ActionResult CloseIncident(String NumberIncident)
         {
-            ViewBag.ModelIncidents = new ModelIncidents().SearchIncidentByNumber(NumberIncident);
+            ViewBag.ModelIncidents = new ModelIncident().SearchIncidentByNumber(NumberIncident);
 
             return View();
 
