@@ -47,7 +47,7 @@ namespace CallManagement.Models.ViewModel
             }
         }
 
-        internal object SearchEmployeeByNumber(string SerialNumber)
+        public DataTable SearchEmployeeByNumber(string SerialNumber)
         {
             using (SqlConnection connection = new SqlConnection(sqlConnection()))
             {
@@ -64,7 +64,7 @@ namespace CallManagement.Models.ViewModel
             }
         }
 
-        internal void AlterEmployee(ModelEmployee modelEmployee)
+        public void AlterEmployee(ModelEmployee modelEmployee)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace CallManagement.Models.ViewModel
             }
         }
 
-        internal void Delete(String SerialNumber)
+        public void Delete(String SerialNumber)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace CallManagement.Models.ViewModel
             }
         }
 
-        internal void Save(ModelEmployee modelEmployee)
+        public void Save(ModelEmployee modelEmployee)
         {
             try
             {
