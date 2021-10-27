@@ -1139,6 +1139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\IncidentController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\StartViewController.cs" />
@@ -1147,7 +1148,9 @@
     </Compile>
     <Compile Include="Models\DB\DaoIncidents.cs" />
     <Compile Include="Models\DB\DaoRequests.cs" />
-    <Compile Include="Models\ViewModel\ModelIncidents.cs" />
+    <Compile Include="Models\DB\DaoEmployee.cs" />
+    <Compile Include="Models\ViewModel\ModelEmployee.cs" />
+    <Compile Include="Models\ViewModel\ModelIncident.cs" />
     <Compile Include="Models\ViewModel\ModelRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1264,6 +1267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
