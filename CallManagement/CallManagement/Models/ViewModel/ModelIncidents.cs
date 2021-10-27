@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CallManagement.Models.ViewModel
 {
-    public class ModelIncident
+    public class ModelIncidents
     {
         public String NumberIncident { get; set; }
         public String Caller { get; set; }
@@ -26,13 +26,13 @@ namespace CallManagement.Models.ViewModel
 
 
 
-        public List<ModelIncident> ListIncident()
+        public List<ModelIncidents> ListIncident()
         {
-            var lista = new List<ModelIncident>();
+            var lista = new List<ModelIncidents>();
             var daoIncident = new DaoIncidents();
             foreach (DataRow row in daoIncident.List().Rows)
             {
-                var incidents = new ModelIncident();
+                var incidents = new ModelIncidents();
                 incidents.NumberIncident = Convert.ToString(row["NumberIncident"]);
                 incidents.Caller = Convert.ToString(row["Caller"]);
                 incidents.Status = Convert.ToString(row["Status"]);
@@ -68,9 +68,9 @@ namespace CallManagement.Models.ViewModel
 
         }
 
-        public ModelIncident SearchIncidentByNumber(string numberIncident)
+        public ModelIncidents SearchIncidentByNumber(string numberIncident)
         {
-            var incidents = new ModelIncident();
+            var incidents = new ModelIncidents();
             var daoIncident = new DaoIncidents();
             foreach (DataRow row in daoIncident.SearchByNumberIncident(numberIncident).Rows)
             {
@@ -117,7 +117,7 @@ namespace CallManagement.Models.ViewModel
             }
         }
 
-        public void AlterIncidentByNumber(ModelIncident incidents)
+        public void AlterIncidentByNumber(ModelIncidents incidents)
         {
             new DaoIncidents().AlterIncident(this);
         }
@@ -127,13 +127,13 @@ namespace CallManagement.Models.ViewModel
             new DaoIncidents().Save(this);
         }
 
-        public List<ModelIncident> SearchIncident(string incident)
+        public List<ModelIncidents> SearchIncident(string incident)
         {
-            var lista = new List<ModelIncident>();
+            var lista = new List<ModelIncidents>();
             var daoIncident = new DaoIncidents();
             foreach (DataRow row in daoIncident.SearchByNumberIncident(incident).Rows)
             {
-                var incidents = new ModelIncident();
+                var incidents = new ModelIncidents();
                 incidents.NumberIncident = Convert.ToString(row["NumberIncident"]);
                 incidents.Caller = Convert.ToString(row["Caller"]);
                 incidents.Status = Convert.ToString(row["Status"]);

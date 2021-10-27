@@ -22,7 +22,7 @@ namespace CallManagement.Controllers
         [HttpPost]
         public ActionResult Save()
         {
-            ModelIncident incidents = new ModelIncident();
+            ModelIncidents incidents = new ModelIncidents();
 
 
             incidents.NumberIncident = incidents.generationNumberIncident();
@@ -47,11 +47,11 @@ namespace CallManagement.Controllers
 
             if(NumberIncident != null && NumberIncident != "")
             {
-                ViewBag.ModelIncidents = new ModelIncident().SearchIncident(NumberIncident);
+                ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
             }
             else
             {
-                ViewBag.ModelIncidents = new ModelIncident().ListIncident();
+                ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
             }
             return View();
         }
@@ -59,7 +59,7 @@ namespace CallManagement.Controllers
         public ActionResult EditIncident(String NumberIncident)
         {
             
-            ViewBag.ModelIncidents = new ModelIncident().SearchIncidentByNumber(NumberIncident);
+            ViewBag.ModelIncidents = new ModelIncidents().SearchIncidentByNumber(NumberIncident);
            
             return View();
         }
@@ -67,7 +67,7 @@ namespace CallManagement.Controllers
 
         public ActionResult AlterIncident()
         {
-            var incidents = new ModelIncident();
+            var incidents = new ModelIncidents();
 
             incidents.NumberIncident = Request["NumberIncident"];
             incidents.Caller = Request["Caller"];
@@ -86,7 +86,7 @@ namespace CallManagement.Controllers
 
         public ActionResult ClosingIncident()
         {
-            var incidents = new ModelIncident();
+            var incidents = new ModelIncidents();
 
             incidents.NumberIncident = Request["NumberIncident"];
             incidents.Caller = Request["Caller"];
@@ -104,7 +104,7 @@ namespace CallManagement.Controllers
 
         public ActionResult CloseIncident(String NumberIncident)
         {
-            ViewBag.ModelIncidents = new ModelIncident().SearchIncidentByNumber(NumberIncident);
+            ViewBag.ModelIncidents = new ModelIncidents().SearchIncidentByNumber(NumberIncident);
 
             return View();
 

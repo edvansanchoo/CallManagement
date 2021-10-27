@@ -1150,7 +1150,7 @@
     <Compile Include="Models\DB\DaoRequests.cs" />
     <Compile Include="Models\DB\DaoEmployee.cs" />
     <Compile Include="Models\ViewModel\ModelEmployee.cs" />
-    <Compile Include="Models\ViewModel\ModelIncident.cs" />
+    <Compile Include="Models\ViewModel\ModelIncidents.cs" />
     <Compile Include="Models\ViewModel\ModelRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
