@@ -135,6 +135,20 @@
                                 </ul>
 
                             </li>
+                            <li>
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user"></i><span class="sidebar-mini-hide text-white-op">Users</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Action("CreateEmployee","Employee")">Add New User</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Action("AllEmployee","Employee")">All Users</a>
+                                    </li>
+                                </ul>
+
+                            </li>
                         </ul>
                     </div>
                     <!-- END Side Content -->
@@ -165,7 +179,7 @@
 
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li>
-                                <a tabindex="-1" href="">
+                                <a tabindex="-1" href="@Url.Action("Login","Employee")">
                                     <i class="si si-logout pull-right"></i>Log out
                                 </a>
                             </li>

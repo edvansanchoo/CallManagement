@@ -15,8 +15,19 @@ namespace CallManagement.Controllers
             var SerialNumber = Request["SerialNumber"];
             var Password = Request["Password"];
 
-            ViewBag.ModelEmployee = new ModelEmployee().Login(SerialNumber, Password);
-            return View();
+            ModelEmployee employee = new ModelEmployee();
+
+            employee = new ModelEmployee().Login(SerialNumber, Password);
+            if(employee.Name != null ) {
+                return RedirectToAction("StartView");
+            }
+            else { 
+                TempData["Erro"] = true;
+                TempData["Message"] = "Login não possui perfil no sistema!";
+
+                return View();
+            }
+            
         }
 
         public ActionResult CreateEmployee()

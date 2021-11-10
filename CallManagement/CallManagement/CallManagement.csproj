@@ -1258,6 +1258,12 @@
     <Content Include="Views\Incident\CloseIncident.cshtml" />
     <Content Include="Views\Request\EditRequest.cshtml" />
     <Content Include="Views\Request\CloseRequest.cshtml" />
+    <Content Include="Views\Employee\Login.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Views\Employee\AllEmployee.cshtml" />
+    <Content Include="Views\Employee\EditEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1267,7 +1273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
