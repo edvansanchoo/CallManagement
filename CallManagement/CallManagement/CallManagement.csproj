@@ -1259,8 +1259,6 @@
     <Content Include="Views\Request\EditRequest.cshtml" />
     <Content Include="Views\Request\CloseRequest.cshtml" />
     <Content Include="Views\Employee\Login.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Employee\CreateEmployee.cshtml" />
     <Content Include="Views\Employee\AllEmployee.cshtml" />
     <Content Include="Views\Employee\EditEmployee.cshtml" />
