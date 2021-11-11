@@ -65,6 +65,33 @@ namespace CallManagement.Models.ViewModel
             return lista;
         }
 
+        public List<ModelRequest> ListRequest(string serialNumber)
+        {
+            var lista = new List<ModelRequest>();
+            var daoRequest = new DaoRequests();
+            foreach (DataRow row in daoRequest.List(serialNumber).Rows)
+            {
+                var request = new ModelRequest();
+                request.NumberRequest = Convert.ToString(row["NumberRequest"]);
+                request.RequestFor = Convert.ToString(row["RequestFor"]);
+                request.Item = Convert.ToString(row["Item"]);
+                request.Status = Convert.ToString(row["Status"]);
+                request.WorkNotes = Convert.ToString(row["WorkNotes"]);
+                request.ShortDescription = Convert.ToString(row["ShortDescription"]);
+                request.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    request.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else
+                {
+                    request.Tecnico = "";
+                }
+                lista.Add(request);
+            }
+            return lista;
+        }
+
         public List<ModelRequest> SearchRequestByNumber(string numberRequest)
         {
             
@@ -90,6 +117,35 @@ namespace CallManagement.Models.ViewModel
                     request.Tecnico = "";
                 }
                 lista.Add(request);     
+            }
+            return lista;
+        }
+
+        public List<ModelRequest> SearchRequestByNumber(string numberRequest, string serialNumber)
+        {
+
+            var request = new ModelRequest();
+            var lista = new List<ModelRequest>();
+            var daoRequest = new DaoRequests();
+            foreach (DataRow row in daoRequest.SearchByNumberRequest(numberRequest, serialNumber).Rows)
+            {
+
+                request.NumberRequest = Convert.ToString(row["NumberRequest"]);
+                request.RequestFor = Convert.ToString(row["RequestFor"]);
+                request.Item = Convert.ToString(row["Item"]);
+                request.Status = Convert.ToString(row["Status"]);
+                request.WorkNotes = Convert.ToString(row["WorkNotes"]);
+                request.ShortDescription = Convert.ToString(row["ShortDescription"]);
+                request.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    request.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else
+                {
+                    request.Tecnico = "";
+                }
+                lista.Add(request);
             }
             return lista;
         }

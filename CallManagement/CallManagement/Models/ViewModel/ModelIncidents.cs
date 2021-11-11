@@ -54,6 +54,35 @@ namespace CallManagement.Models.ViewModel
             return lista;
         }
 
+        public List<ModelIncidents> ListIncident(string serialNumber)
+        {
+            var lista = new List<ModelIncidents>();
+            var daoIncident = new DaoIncidents();
+            foreach (DataRow row in daoIncident.List(serialNumber).Rows)
+            {
+                var incidents = new ModelIncidents();
+                incidents.NumberIncident = Convert.ToString(row["NumberIncident"]);
+                incidents.Caller = Convert.ToString(row["Caller"]);
+                incidents.Status = Convert.ToString(row["Status"]);
+                incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
+                incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
+                incidents.Description = Convert.ToString(row["Description"]);
+                incidents.TempoResolucao = Convert.ToString(row["TempoResolucao"]);
+                if (row["Tecnico"] != null)
+                {
+                    incidents.Tecnico = Convert.ToString(row["Tecnico"]);
+                }
+                else
+                {
+                    incidents.Tecnico = "";
+                }
+
+
+                lista.Add(incidents);
+            }
+            return lista;
+        }
+
         public String generationNumberIncident()
         {
             String numberIncident = "INC";
@@ -132,6 +161,25 @@ namespace CallManagement.Models.ViewModel
             var lista = new List<ModelIncidents>();
             var daoIncident = new DaoIncidents();
             foreach (DataRow row in daoIncident.SearchByNumberIncident(incident).Rows)
+            {
+                var incidents = new ModelIncidents();
+                incidents.NumberIncident = Convert.ToString(row["NumberIncident"]);
+                incidents.Caller = Convert.ToString(row["Caller"]);
+                incidents.Status = Convert.ToString(row["Status"]);
+                incidents.WorkNotes = Convert.ToString(row["WorkNotes"]);
+                incidents.ResolutionInformation = Convert.ToString(row["ResolutionInformation"]);
+                incidents.Description = Convert.ToString(row["Description"]);
+
+                lista.Add(incidents);
+            }
+            return lista;
+        }
+
+        public List<ModelIncidents> SearchIncident(string incident, string serialNumber)
+        {
+            var lista = new List<ModelIncidents>();
+            var daoIncident = new DaoIncidents();
+            foreach (DataRow row in daoIncident.SearchByNumberIncident(incident, serialNumber).Rows)
             {
                 var incidents = new ModelIncidents();
                 incidents.NumberIncident = Convert.ToString(row["NumberIncident"]);

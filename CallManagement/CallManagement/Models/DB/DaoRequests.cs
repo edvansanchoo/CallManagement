@@ -54,11 +54,46 @@ namespace CallManagement.Models.DB
             }
         }
 
+        public DataTable List(string serialNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConnection()))
+            {
+                string queryString = "SELECT * FROM REQUEST WHERE REQUESTFOR='" + serialNumber + "'";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                return table;
+            }
+        }
+
         public DataTable SearchByNumberRequest(string numberRequest)
         {
             using (SqlConnection connection = new SqlConnection(sqlConnection()))
             {
                 string queryString = "SELECT * FROM REQUEST WHERE NUMBERREQUEST='" + numberRequest + "'";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+        }
+
+        public DataTable SearchByNumberRequest(string numberRequest, string serialNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConnection()))
+            {
+                string queryString = "SELECT * FROM REQUEST WHERE NUMBERREQUEST='" + numberRequest + "' AND REQUESTFOR='" + serialNumber + "'";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 
