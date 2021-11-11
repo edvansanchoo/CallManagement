@@ -39,7 +39,7 @@ namespace CallManagement.Models.ViewModel
             {
                 employee.Name = Convert.ToString(row["Name"]);
                 employee.Departament = Convert.ToString(row["Departament"]);
-                employee.SeriaNumber = Convert.ToString(row["SeriaNumber"]);
+                employee.SeriaNumber = Convert.ToString(row["SerialNumber"]);
                 employee.IsTecnic = Convert.ToInt32(row["IsTecnic"]);
   
             }

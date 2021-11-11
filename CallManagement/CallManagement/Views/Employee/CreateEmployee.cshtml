@@ -26,12 +26,11 @@
     </div>
 </div>
 <br />
-<form action="@Url.Action("SaveExpense","Expense")" method="post" id="formLabel" enctype="multipart/form-data">
-    <input id="expense" name="Expense" hidden />
+<form action="@Url.Action("Save","Employee")" method="post" id="formLabel" enctype="multipart/form-data">
     <div class="row">
         <div class="col-xs-5">
             <label>Name <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="ClinicName" id="txtClinicName" required autocomplete="off" />
+            <input type="text" class="form-control" name="Name" id="Name" required autocomplete="off" />
         </div>
         <div class="col-xs-5">
             <label>Department <span class="text-danger">*</span></label>
@@ -52,11 +51,11 @@
     <div class="row">
         <div class="col-md-2">
             <label control-label" for="val-currency">Login <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="ClinicName" id="txtClinicName" required autocomplete="off" />
+            <input type="text" class="form-control" name="SerialNumber" id="SerialNumber" required autocomplete="off" />
         </div>
         <div class="col-xs-2">
             <label>Password <span class="text-danger">*</span></label>
-            <input class="form-control" type="password" />
+            <input name="Password" id="Password" class="form-control" type="password" />
         </div>
         <div class="col-xs-2">
         </div>
@@ -68,14 +67,14 @@
                 <option value="1">Default User</option>
             </select>
         </div>
- 
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-4">
+            <button id="btnSave" class="btn btn-success">Save <i class="fa fa-save"></i></button>
+            <a class="btn btn-info" href="@Url.Action("Index","StartView")">Back <i class="fa fa-undo"></i></a>
+        </div>
     </div>
 </form>
-<br />
-<div class="row">
-    <div class="col-xs-4">
-        <button id="btnSave" class="btn btn-success">Save <i class="fa fa-save"></i></button>
-        <a class="btn btn-info" href="@Url.Action("Index","StartView")">Back <i class="fa fa-undo"></i></a>
-    </div>
-</div>
 <script src="~/Scripts/Expense/IndexNew.js"></script>
