@@ -49,7 +49,7 @@ namespace CallManagement.Controllers
             
             employee.SaveEmployee();
 
-            return RedirectToAction("CreateIncident");
+            return RedirectToAction("CreateEmployee");
 
         }
 
@@ -91,14 +91,14 @@ namespace CallManagement.Controllers
 
             employee.AlterEmployeetByNumber();
 
-            return RedirectToAction("AllIncident");
+            return RedirectToAction("AllEmployee");
         }
 
         public ActionResult DeleteEmployee(String SerialNumber)
         {
             new ModelEmployee().DeleteEmployee(SerialNumber);
 
-            return View();
+            return RedirectToAction("AllEmployee");
 
         }
     }
