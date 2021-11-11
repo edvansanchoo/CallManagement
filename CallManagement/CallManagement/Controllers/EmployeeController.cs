@@ -19,7 +19,7 @@ namespace CallManagement.Controllers
 
             employee = new ModelEmployee().Login(SerialNumber, Password);
             if(employee.Name != null ) {
-                return RedirectToAction("StartView");
+                return RedirectToAction("Index", "StartView");
             }
             else { 
                 TempData["Erro"] = true;
@@ -43,7 +43,7 @@ namespace CallManagement.Controllers
 
             employee.Name = Request["Name"];
             employee.Departament = Request["Departament"];
-            employee.SeriaNumber = Request["SeriaNumber"];
+            employee.SeriaNumber = Request["SerialNumber"];
             employee.IsTecnic = Convert.ToInt32(Request["IsTecnic"]);
             employee.Password = Request["Password"];
             
