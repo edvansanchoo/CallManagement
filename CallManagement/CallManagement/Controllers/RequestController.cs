@@ -31,23 +31,42 @@ namespace CallManagement.Controllers
 
             request.Save();
 
-            return RedirectToAction("CreateRequest");
+            TempData["Employee"] = Request["RequestBy"];
+            return RedirectToAction("AllRequest");
         }
 
         public ActionResult AllRequest()
         {
 
             var NumberRequest = Request["searchRequest"];
+            String serialNumber = TempData["Employee"].ToString();
+            ModelEmployee employee = new ModelEmployee().SearchEmployeeByNumber(serialNumber);
 
-            if (NumberRequest != null && NumberRequest != "")
+            if (employee.IsTecnic == 1)
             {
-                ViewBag.ModelRequest = new ModelRequest().SearchRequestByNumber(NumberRequest);
+                if (NumberRequest != null && NumberRequest != "")
+                {
+                    ViewBag.ModelRequest = new ModelRequest().SearchRequestByNumber(NumberRequest);
+                }
+                else
+                {
+                    ViewBag.ModelRequest = new ModelRequest().ListRequest();
+                }
             }
             else
             {
-                ViewBag.ModelRequest = new ModelRequest().ListRequest();
+                if (NumberRequest != null && NumberRequest != "")
+                {
+                    ViewBag.ModelRequest = new ModelRequest().SearchRequestByNumber(NumberRequest, employee.SeriaNumber);
+                }
+                else
+                {
+                    ViewBag.ModelRequest = new ModelRequest().ListRequest(employee.SeriaNumber);
+                }
             }
+            TempData["Employee"] = serialNumber;
             return View();
+
         }
 
         public ActionResult EditRequest(String NumberRequest)

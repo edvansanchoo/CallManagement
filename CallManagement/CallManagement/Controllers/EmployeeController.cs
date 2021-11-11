@@ -19,6 +19,7 @@ namespace CallManagement.Controllers
 
             employee = new ModelEmployee().Login(SerialNumber, Password);
             if(employee.Name != null ) {
+                TempData["Employee"] = employee.SeriaNumber;
                 return RedirectToAction("Index", "StartView");
             }
             else { 

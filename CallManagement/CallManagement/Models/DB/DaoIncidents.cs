@@ -33,6 +33,24 @@ namespace CallManagement.Models.DB
             }
         }
 
+        public DataTable List(string serialNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConnection()))
+            {
+                string queryString = "SELECT * FROM INCIDENT WHERE CALLER ='" + serialNumber + "'";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                return table;
+            }
+        }
+
         public void Save(ModelIncidents incident)
         {
             try
@@ -57,6 +75,23 @@ namespace CallManagement.Models.DB
             using (SqlConnection connection = new SqlConnection(sqlConnection()))
             {
                 string queryString = "SELECT * FROM INCIDENT WHERE NUMBERINCIDENT='" + numberIncident + "'";
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+        }
+
+        public DataTable SearchByNumberIncident(string numberIncident, string serialNumber)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConnection()))
+            {
+                string queryString = "SELECT * FROM INCIDENT WHERE NUMBERINCIDENT='" + numberIncident + "' AND CALLER = '" + serialNumber + "'";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
 

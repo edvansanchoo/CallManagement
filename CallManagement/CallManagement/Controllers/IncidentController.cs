@@ -34,8 +34,8 @@ namespace CallManagement.Controllers
             incidents.dateLimiteRequest();
 
             incidents.Save();
-            
-            return RedirectToAction("CreateIncident");
+            TempData["Employee"] = Request["Caller"];
+            return RedirectToAction("AllIncident");
 
         }
 
@@ -44,16 +44,34 @@ namespace CallManagement.Controllers
         {
 
             var NumberIncident = Request["searchIncident"];
+            String serialNumber = TempData["Employee"].ToString();
+            ModelEmployee employee = new ModelEmployee().SearchEmployeeByNumber(serialNumber);
 
-            if(NumberIncident != null && NumberIncident != "")
+            if(employee.IsTecnic == 1)
             {
-                ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
+                if (NumberIncident != null && NumberIncident != "")
+                {
+                    ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident);
+                }
+                else
+                {
+                    ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
+                }
             }
             else
             {
-                ViewBag.ModelIncidents = new ModelIncidents().ListIncident();
+                if (NumberIncident != null && NumberIncident != "")
+                {
+                    ViewBag.ModelIncidents = new ModelIncidents().SearchIncident(NumberIncident, employee.SeriaNumber);
+                }
+                else
+                {
+                    ViewBag.ModelIncidents = new ModelIncidents().ListIncident(employee.SeriaNumber);
+                }
             }
+            TempData["Employee"] = serialNumber;
             return View();
+
         }
 
         public ActionResult EditIncident(String NumberIncident)
