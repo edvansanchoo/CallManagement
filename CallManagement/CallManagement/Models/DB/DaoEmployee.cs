@@ -70,7 +70,7 @@ namespace CallManagement.Models.ViewModel
             {
                 using (SqlConnection connection = new SqlConnection(sqlConnection()))
                 {
-                    string queryString = "UPDATE EMPLOYEE SET NAME = '" + modelEmployee.Name + "', DEPARTAMENT = '" + modelEmployee.Departament + "', SERIALNUMBER = '" + modelEmployee.SeriaNumber + "', ISTECNIC = '" + modelEmployee.IsTecnic + "', PASSWORD = '" + modelEmployee.Password +"'";
+                    string queryString = "UPDATE EMPLOYEE SET NAME = '" + modelEmployee.Name + "', DEPARTAMENT = '" + modelEmployee.Departament + "', SERIALNUMBER = '" + modelEmployee.SeriaNumber + "', ISTECNIC = '" + modelEmployee.IsTecnic + "', PASSWORD = '" + modelEmployee.Password +"' WHERE SERIALNUMBER = '"+modelEmployee.SeriaNumber+"'";
 
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();

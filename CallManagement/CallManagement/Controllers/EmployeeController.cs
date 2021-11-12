@@ -86,7 +86,7 @@ namespace CallManagement.Controllers
 
             employee.Name = Request["Name"];
             employee.Departament = Request["Departament"];
-            employee.SeriaNumber = Request["SeriaNumber"];
+            employee.SeriaNumber = Request["SerialNumber"];
             employee.IsTecnic = Convert.ToInt32(Request["IsTecnic"]);
             employee.Password = Request["Password"];
 
