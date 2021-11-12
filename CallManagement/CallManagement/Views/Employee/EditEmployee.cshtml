@@ -1,17 +1,71 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "IndexNew";
+    Layout = "~/Views/Layout.cshtml";
+    CallManagement.Models.ViewModel.ModelEmployee employee = ViewBag.ModelEmployee;
 }
 
-<!DOCTYPE html>
+<style>
+    th {
+        color: white;
+        text-align: center;
+    }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>EditEmployee</title>
-</head>
-<body>
-    <div> 
+    td {
+        text-align: center;
+    }
+</style>
+
+<h2>Edit User</h2>
+<hr />
+<div class="row">
+    <div class="col-xs-4">
+        <h4>User Informations</h4>
     </div>
-</body>
-</html>
+</div>
+<br />
+<form action="@Url.Action("AlterEmployee","Employee")" method="post" id="formLabel" enctype="multipart/form-data">
+    <input id="dataProperties" name="DataProperties" hidden />
+    <div class="row">
+        <div class="col-xs-5">
+            <label>Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="Name" id="Name" required autocomplete="off" value="@employee.Name" />
+        </div>
+        <div class="col-xs-5">
+            <label>Departament <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="Departament" id="Departament" required autocomplete="off" value="@employee.Departament" />
+        </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <label control-label" for="val-currency">Login <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="SerialNumber" id="SerialNumber" required autocomplete="off" value="@employee.SeriaNumber" />
+        </div>
+        <div class="col-xs-2">
+            <label>Password <span class="text-danger">*</span></label>
+            <input name="Password" id="Password" class="form-control" type="password" value="@employee.Password" />
+        </div>
+        <div class="col-xs-2">
+        </div>
+        <div style="margin-left:-200px" class="col-xs-2">
+            <label>IsTecnic <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="IsTecnic" id="IsTecnic" required autocomplete="off" value="@employee.IsTecnic" />
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-4">
+            <button id="btnEdit" class="btn btn-success">Edit <i class="fa fa-save"></i></button>
+            <a class="btn btn-info" href="@Url.Action("AllEmployee","Employee")">Back <i class="fa fa-undo"></i></a>
+        </div>
+    </div>
+</form>
+    <br />
+
+    <script src="~/Scripts/Incident/EditIncident.js"></script>
+
+
